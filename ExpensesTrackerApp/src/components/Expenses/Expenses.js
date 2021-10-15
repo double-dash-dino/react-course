@@ -5,7 +5,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import React, { useState } from "react";
 
 function Expenses(props) {
-  const [pickedYear, setPickedYear] = useState("");
+  const [pickedYear, setPickedYear] = useState("2021");
 
   const onPickedYearHandler = (pickedYear) => {
     setPickedYear(pickedYear);
@@ -14,7 +14,10 @@ function Expenses(props) {
 
   return (
     <Card className="expenses">
-      <ExpensesFilter onPickedYear={onPickedYearHandler} />
+      <ExpensesFilter
+        selected={pickedYear}
+        onPickedYear={onPickedYearHandler}
+      />
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
@@ -38,5 +41,4 @@ function Expenses(props) {
     </Card>
   );
 }
-
 export default Expenses;
