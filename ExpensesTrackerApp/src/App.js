@@ -4,24 +4,28 @@ import React, { useState } from "react";
 
 const DUMMYEXPENSES = [
   {
+    id: "e1",
     title: "Car insurance",
     amount: 240,
-    date: new Date(2021, 6, 12),
+    date: new Date(2019, 6, 12),
   },
   {
+    id: "e2",
     title: "Drugs",
     amount: 50,
-    date: new Date(2021, 4, 2),
+    date: new Date(2020, 4, 2),
   },
   {
+    id: "e3",
     title: "Police bribe",
     amount: 2400,
     date: new Date(2021, 2, 12),
   },
   {
+    id: "e4",
     title: "Pornstars",
     amount: 240,
-    date: new Date(2021, 1, 1),
+    date: new Date(2022, 1, 1),
   },
 ];
 
