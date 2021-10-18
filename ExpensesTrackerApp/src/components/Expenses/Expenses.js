@@ -21,7 +21,7 @@ function Expenses(props) {
         selected={pickedYear}
         onPickedYear={onPickedYearHandler}
       />
-      }
+
       {expensesOfTheYear.map((expense) => (
         <ExpenseItem
           key={expense.id}
