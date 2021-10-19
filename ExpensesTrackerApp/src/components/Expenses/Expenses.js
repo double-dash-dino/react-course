@@ -6,12 +6,7 @@ import React, { useState } from "react";
 
 
 function Expenses(props) {
-  const [pickedYear, setPickedYear] = useState("2021");
-
-  const expensesOfTheYear = props.expenses.filter(
-    (expense) => expense.date.getFullYear().toString() === pickedYear.toString()
-  );
-
+  const [pickedYear, setPickedYear] = useState("2021")
   const onPickedYearHandler = (pickedYear) => {
     setPickedYear(pickedYear);
   };
