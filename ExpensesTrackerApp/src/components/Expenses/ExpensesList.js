@@ -13,14 +13,14 @@ const ExpensesList = (props) => {
   }
   return;
   <ul className="expenses-list">
-    expensesOfTheYear.map((expense) => (
-    <ExpenseItem
-      key={expense.id}
-      title={expense.title}
-      amount={expense.amount}
-      date={expense.date}
-    />
-    ));
+    {expensesOfTheYear.map((expensesOfTheYear) => (
+      <ExpenseItem
+        key={expensesOfTheYear.id}
+        title={expensesOfTheYear.title}
+        amount={expensesOfTheYear.amount}
+        date={expensesOfTheYear.date}
+      />
+    ))}
   </ul>;
 };
 
