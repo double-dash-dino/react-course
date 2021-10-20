@@ -7,11 +7,11 @@ const ExpensesList = (props) => {
       expense.date.getFullYear().toString() === props.pickedYear.toString()
   );
 
-  console.log(props.pickedYear, expensesOfTheYear);
-  if (props.expenses.length === 0) {
+  console.log(props.pickedYear, expensesOfTheYear, props.expenses.length);
+  if (expensesOfTheYear.length === 0) {
     return <h2 className="expenses-list__fallback">No expenses found.</h2>;
   }
-  return;
+  return(
   <ul className="expenses-list">
     {expensesOfTheYear.map((expensesOfTheYear) => (
       <ExpenseItem
@@ -21,7 +21,7 @@ const ExpensesList = (props) => {
         date={expensesOfTheYear.date}
       />
     ))}
-  </ul>;
+  </ul>)
 };
 
 export default ExpensesList;
