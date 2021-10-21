@@ -37,7 +37,6 @@ const App = () => {
       return [expense, ...prevExpenses];
     });
   };
-// TODO : Add a chart
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />

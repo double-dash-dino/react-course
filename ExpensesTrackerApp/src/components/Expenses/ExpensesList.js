@@ -2,26 +2,21 @@ import "./ExpensesList.css";
 import ExpenseItem from "./ExpenseItem.js";
 
 const ExpensesList = (props) => {
-  const expensesOfTheYear = props.expenses.filter(
-    (expense) =>
-      expense.date.getFullYear().toString() === props.pickedYear.toString()
-  );
-
-  console.log(props.pickedYear, expensesOfTheYear, props.expenses.length);
-  if (expensesOfTheYear.length === 0) {
+  if (props.expenses.length === 0) {
     return <h2 className="expenses-list__fallback">No expenses found.</h2>;
   }
-  return(
-  <ul className="expenses-list">
-    {expensesOfTheYear.map((expensesOfTheYear) => (
-      <ExpenseItem
-        key={expensesOfTheYear.id}
-        title={expensesOfTheYear.title}
-        amount={expensesOfTheYear.amount}
-        date={expensesOfTheYear.date}
-      />
-    ))}
-  </ul>)
+  return (
+    <ul className="expenses-list">
+      {props.expenses.map((expenses) => (
+        <ExpenseItem
+          key={expenses.id}
+          title={expenses.title}
+          amount={expenses.amount}
+          date={expenses.date}
+        />
+      ))}
+    </ul>
+  );
 };
 
 export default ExpensesList;
