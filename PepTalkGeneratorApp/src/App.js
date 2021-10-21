@@ -1,4 +1,6 @@
 import './App.css';
+import Card from "./Components/UI/Card.js"
+import RandomPepTalkGenerator from "./Components/RandomPepTalkGenerator.js"
 
 function App() {
   return (
@@ -7,7 +9,7 @@ function App() {
         Need pep talk?
       </header>
       <Card>
-
+<RandomPepTalkGenerator />
       </Card>
     </div>
   );
