@@ -11,7 +11,7 @@ function Expenses(props) {
     setPickedYear(pickedYear);
   };
   const expensesOfTheYear = props.expenses.filter(
-    (expense) => expense.date.getFullYear() === pickedYear
+    (expense) => expense.date.getFullYear().toString() === pickedYear.toString()
   );
 
   return (
@@ -22,7 +22,7 @@ function Expenses(props) {
           onPickedYear={onPickedYearHandler}
         />
         <ExpensesChart expenses={expensesOfTheYear} />
-        <ExpensesList pickedYear={pickedYear} expenses={props.expenses} />
+        <ExpensesList pickedYear={pickedYear} expenses={expensesOfTheYear} />
       </Card>
     </li>
   );
