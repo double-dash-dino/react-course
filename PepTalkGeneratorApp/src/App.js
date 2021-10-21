@@ -5,11 +5,12 @@ import RandomPepTalkGenerator from "./Components/RandomPepTalkGenerator.js"
 function App() {
   return (
     <div className="App">
+      
+      <Card>
       <header className="App-header">
         Need pep talk?
-      </header>
-      <Card>
 <RandomPepTalkGenerator />
+      </header>
       </Card>
     </div>
   );
