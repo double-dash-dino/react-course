@@ -11,9 +11,6 @@ function App() {
           <RandomPepTalkGenerator />
           <RandomShakespeareInsultGenerator />
         </div>
-        {/* <div className="App-header">
-          <RandomShakespeareInsultGenerator />
-        </div> */}
       </Card>
     </div>
   );
