@@ -1,0 +1,7 @@
+.card {
+  border-radius: 12px;
+  background-color: whitesmoke;
+  min-width: 50%;
+  min-height: 10em;
+  display: flex;
+}
