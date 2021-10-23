@@ -1,5 +1,6 @@
 import "./UserLogger.css";
 import React, { useState } from "react";
+import EmptyNameError from "./Errors/EmptyNameError";
 
 const UserLogger = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -15,12 +16,21 @@ const UserLogger = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const userData = {
-      key: Math.random().toString(),
-      username: enteredUsername,
-      age: enteredAge,
-    };
-    props.onSubmitNewUser(userData);
+
+    if (enteredUsername.trim().length > 0) {
+      const userData = {
+        key: Math.random().toString(),
+        username: enteredUsername,
+        age: enteredAge,
+      };
+
+      setEnteredUsername("");
+      setEnteredAge("");
+      props.onSubmitNewUser(userData);
+    } else {
+      console.log(enteredUsername.length);
+      return <EmptyNameError />;
+    }
   };
 
   return (
@@ -30,12 +40,14 @@ const UserLogger = (props) => {
         <input
           type="text"
           className="user-input__field"
+          value={enteredUsername}
           onChange={onUsernameChangeHandler}
         ></input>
         <h2 className="user-input__label">Age (years)</h2>
         <input
           type="number"
           className="user-input__field"
+          value={enteredAge}
           onChange={onAgeChangeHandler}
         ></input>
       </div>
