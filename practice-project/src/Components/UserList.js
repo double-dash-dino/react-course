@@ -5,8 +5,9 @@ const UserList = (props) => {
   return (
     <div>
       <h2>User list</h2>
-      <UserItem />
-      <UserItem />
+      {props.users.map((user) => (
+        <UserItem key={user.key} username={user.username} age={user.age} />
+      ))}
     </div>
   );
 };

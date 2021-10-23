@@ -2,7 +2,6 @@ import "./UserLogger.css";
 import React, { useState } from "react";
 
 const UserLogger = (props) => {
-  const userData = {};
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -14,14 +13,18 @@ const UserLogger = (props) => {
     setEnteredAge(event.target.value);
   };
 
-  const submitHandler = (enteredUsername, enteredAge) => {
-    userData.username = enteredUsername;
-    userData.age = enteredAge;
-    console.log(userData);
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const userData = {
+      key: Math.random().toString(),
+      username: enteredUsername,
+      age: enteredAge,
+    };
+    props.onSubmitNewUser(userData);
   };
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div>
         <h2 className="user-input__label">Username</h2>
         <input
@@ -36,11 +39,7 @@ const UserLogger = (props) => {
           onChange={onAgeChangeHandler}
         ></input>
       </div>
-      <button
-        type="submit"
-        className="user-input__submit"
-        onSubmit={submitHandler}
-      >
+      <button type="submit" className="user-input__submit">
         Add new user
       </button>
     </form>
