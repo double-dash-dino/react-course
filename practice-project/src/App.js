@@ -4,6 +4,7 @@ import UserList from "./Components/UserList.js";
 import React, { useState } from "react";
 import "./App.css";
 import EmptyNameError from "./Components/Errors/EmptyNameError.js";
+import InvalidAgeErrror from "./Components/Errors/InvalidAgeError.js";
 
 function App() {
   const [listOfUsers, setListOfUsers] = useState([]);
@@ -21,6 +22,9 @@ function App() {
     <div className="App">
       {errorStatus === "emptyNameOrAge" && (
         <EmptyNameError errorStatus={onErrorStatus} />
+      )}
+      {errorStatus === "invalidAge" && (
+        <InvalidAgeErrror errorStatus={onErrorStatus} />
       )}
       <Card>
         <UserLogger
