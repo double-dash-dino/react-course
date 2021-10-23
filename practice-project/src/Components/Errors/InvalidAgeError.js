@@ -1,11 +1,6 @@
 import "./ErrorPopUps.css";
-import Card from "../UI/Card.js";
 
-const EmptyNameError = (props) => {
-  const onClickHandler = (event) => {
-    props.errorStatus("");
-  };
-
+const InvalidAgeErrror = (props) => {
   return (
     <div className="error-page" onClick={onClickHandler}>
       <Card className="error-message__title" onClick={onClickHandler}>
@@ -17,5 +12,3 @@ const EmptyNameError = (props) => {
     </div>
   );
 };
-
-export default EmptyNameError;
