@@ -1,0 +1,17 @@
+.user-input__label {
+  font-weight: bold;
+}
+
+.user-input__field {
+  border-color: black;
+  border-width: thin;
+  height: 2em;
+}
+
+.user-input__submit {
+  margin-top: 40px;
+  background-color: blueviolet;
+  padding: 15px;
+  color: whitesmoke;
+  font-weight: bold;
+}

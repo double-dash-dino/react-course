@@ -1,0 +1,33 @@
+.error-page {
+  background-color: rgba(0, 0, 0, 0.616);
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message__title {
+  background-color: tomato;
+  position: relative;
+  min-width: 40%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  padding-bottom: 0px;
+}
+
+.error-message__title h2 {
+  color: ivory;
+  align-self: flex-start;
+}
+
+.error-message__detail {
+  display: flex;
+  padding-top: 30px;
+  width: 100%;
+  align-self: center;
+  margin: 0px;
+}
