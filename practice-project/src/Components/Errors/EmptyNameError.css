@@ -1,4 +1,14 @@
 .error-page {
-  background-color: tomato;
+  background-color: rgba(0, 0, 0, 0.616);
   position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  background-color: tomato;
+  position: relative;
 }
