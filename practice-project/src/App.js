@@ -19,7 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      {errorStatus === "emptyNameOrAge" && <EmptyNameError />}
+      {errorStatus === "emptyNameOrAge" && (
+        <EmptyNameError errorStatus={onErrorStatus} />
+      )}
       <Card>
         <UserLogger
           onSubmitNewUser={onSubmitNewUser}

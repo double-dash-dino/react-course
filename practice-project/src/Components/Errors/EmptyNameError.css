@@ -11,4 +11,9 @@
 .error-message {
   background-color: tomato;
   position: relative;
+  min-width: 40%;
+  min-height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
