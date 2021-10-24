@@ -90,6 +90,7 @@ const RandomPepTalkGenerator = (props) => {
 
   const clickHandler = () => {
     setSentenceToDisplay(getSentence);
+    props.getSentence(sentenceToDisplay);
   };
 
   const getSentence = () => {
@@ -110,7 +111,6 @@ const RandomPepTalkGenerator = (props) => {
       <button onClick={clickHandler} className="button-pep-talk">
         Yes please!
       </button>
-      <p>{sentenceToDisplay}</p>
     </div>
   );
 };

@@ -59,6 +59,7 @@ const RandomShakespeareInsultGenerator = (props) => {
   const [sentenceToDisplay, setSentenceToDisplay] = useState("");
   const clickHandler = (event) => {
     setSentenceToDisplay(getSentence());
+    props.getSentence(sentenceToDisplay);
   };
 
   return (
@@ -67,7 +68,6 @@ const RandomShakespeareInsultGenerator = (props) => {
       <button onClick={clickHandler} className="button-shakespeare">
         I shall
       </button>
-      <p>{sentenceToDisplay}</p>
     </div>
   );
 };
