@@ -1,5 +1,7 @@
 import "./RandomPepTalkGenerator.css";
 
+// TODO: FIX THE CAPITALISATION IN GENERATED SENTENCES
+
 const RandomPepTalkGenerator = (props) => {
   const a = [
     "Champ.",

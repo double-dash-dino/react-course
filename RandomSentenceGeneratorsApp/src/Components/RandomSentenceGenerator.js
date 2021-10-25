@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import RandomPepTalkGenerator from "./RandomGenerators/RandomPepTalkGenerator.js";
 import RandomShakespeareInsultGenerator from "./RandomGenerators/RandomShakespeareInsultGenerator.js";
 import RandomSentence from "./RandomSentence.js";
+import RandomThankYouGenerator from "./RandomGenerators/RandomThankYouGenerator.js";
 
 const RandomSentenceGenerator = (props) => {
   const [sentence, setSentence] = useState("");
@@ -17,6 +18,7 @@ const RandomSentenceGenerator = (props) => {
       <div className="generator-controls">
         <RandomPepTalkGenerator getSentence={onGetSentence} />
         <RandomShakespeareInsultGenerator getSentence={onGetSentence} />
+        <RandomThankYouGenerator getSentence={onGetSentence} />
       </div>
 
       <RandomSentence sentence={sentence} />

@@ -13,3 +13,5 @@ function App() {
 }
 
 export default App;
+
+// TODO: ADD A METHODS FOLDER TO STORE GETNUMBER AND GETSENTENCE FUNCTIONS
