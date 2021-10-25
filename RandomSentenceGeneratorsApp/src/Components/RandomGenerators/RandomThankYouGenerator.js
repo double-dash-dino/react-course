@@ -1,4 +1,3 @@
-import RandomPepTalkGenerator from "./RandomPepTalkGenerator";
 import "./RandomThankYouGenerator.css";
 
 const RandomThankYouGenerator = (props) => {
@@ -57,10 +56,32 @@ const RandomThankYouGenerator = (props) => {
   };
 
   const getNumber = () => {
-    return Math.round(Math.random() * 15);
+    return Math.round(Math.random() * 14);
   };
 
-  return 1;
+  const getSentence = () => {
+    return (
+      "Thank you for being " +
+      sentenceSnippets.part1[getNumber()] +
+      " " +
+      sentenceSnippets.part2[getNumber()] +
+      ", " +
+      sentenceSnippets.part3[getNumber()] +
+      "."
+    );
+  };
+
+  const onClickHandler = (event) => {
+    props.getSentence(getSentence);
+  };
+
+  return (
+    <div>
+      <button className="button-thank-you" onClick={onClickHandler}>
+        Show me some gratitude!
+      </button>
+    </div>
+  );
 };
 
 export default RandomThankYouGenerator;
