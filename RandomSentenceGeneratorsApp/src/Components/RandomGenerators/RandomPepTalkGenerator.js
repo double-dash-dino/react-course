@@ -11,7 +11,7 @@ const RandomPepTalkGenerator = (props) => {
     "Check it:",
     "Just saying...",
     "Superstar,",
-    "Tiger",
+    "Tiger,",
     "Self.",
     "Know this:",
     "News alert:",
