@@ -40,7 +40,7 @@ const RandomShakespeareInsultGenerator = (props) => {
   ];
 
   const getNumber = () => {
-    return Math.floor(Math.random() * 10);
+    return Math.round(Math.random() * 9);
   };
 
   const getSentence = () => {
