@@ -7,3 +7,5 @@ const RandomSentence = (props) => {
     </div>
   );
 };
+
+export default RandomSentence;
