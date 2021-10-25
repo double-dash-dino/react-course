@@ -1,5 +1,4 @@
 import "./RandomPepTalkGenerator.css";
-import React, { useState } from "react";
 
 const RandomPepTalkGenerator = (props) => {
   const a = [
@@ -86,11 +85,9 @@ const RandomPepTalkGenerator = (props) => {
   const getNumber = () => {
     return Math.floor(Math.random() * 18);
   };
-  const [sentenceToDisplay, setSentenceToDisplay] = useState("");
 
   const clickHandler = () => {
-    setSentenceToDisplay(getSentence);
-    props.getSentence(sentenceToDisplay);
+    props.getSentence(getSentence);
   };
 
   const getSentence = () => {

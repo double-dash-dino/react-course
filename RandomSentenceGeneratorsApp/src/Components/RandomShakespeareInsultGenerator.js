@@ -1,5 +1,4 @@
 import "./RandomShakespeareInsultGenerator.css";
-import React, { useState } from "react";
 
 const RandomShakespeareInsultGenerator = (props) => {
   const shakespeare1 = [
@@ -56,10 +55,8 @@ const RandomShakespeareInsultGenerator = (props) => {
     );
   };
 
-  const [sentenceToDisplay, setSentenceToDisplay] = useState("");
   const clickHandler = (event) => {
-    setSentenceToDisplay(getSentence());
-    props.getSentence(sentenceToDisplay);
+    props.getSentence(getSentence);
   };
 
   return (
