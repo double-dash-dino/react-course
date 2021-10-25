@@ -1,5 +1,4 @@
 import "./RandomShakespeareInsultGenerator.css";
-import React, { useState } from "react";
 
 const RandomShakespeareInsultGenerator = (props) => {
   const shakespeare1 = [
@@ -56,18 +55,15 @@ const RandomShakespeareInsultGenerator = (props) => {
     );
   };
 
-  const [sentenceToDisplay, setSentenceToDisplay] = useState("");
   const clickHandler = (event) => {
-    setSentenceToDisplay(getSentence());
+    props.getSentence(getSentence);
   };
 
   return (
     <div className="shakespeare-box">
-      <p>Want to be insulted, Shakespeare style?</p>
       <button onClick={clickHandler} className="button-shakespeare">
-        I shall
+        Insult me in the style of Shakespeare!
       </button>
-      <p>{sentenceToDisplay}</p>
     </div>
   );
 };
