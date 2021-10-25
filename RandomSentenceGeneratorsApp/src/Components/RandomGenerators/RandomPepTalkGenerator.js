@@ -85,7 +85,7 @@ const RandomPepTalkGenerator = (props) => {
   ];
 
   const getNumber = () => {
-    return Math.floor(Math.random() * 18);
+    return Math.round(Math.random() * 17);
   };
 
   const clickHandler = () => {
