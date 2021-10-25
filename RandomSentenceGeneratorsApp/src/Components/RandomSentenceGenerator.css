@@ -1,0 +1,15 @@
+.generator-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.generator-controls button {
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 15rem;
+  max-width: 95%;
+  min-height: 20%;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+}

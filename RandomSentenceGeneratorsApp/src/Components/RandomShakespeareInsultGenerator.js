@@ -64,9 +64,8 @@ const RandomShakespeareInsultGenerator = (props) => {
 
   return (
     <div className="shakespeare-box">
-      <p>Want to be insulted, Shakespeare style?</p>
       <button onClick={clickHandler} className="button-shakespeare">
-        I shall
+        Insult me in the style of Shakespeare!
       </button>
     </div>
   );

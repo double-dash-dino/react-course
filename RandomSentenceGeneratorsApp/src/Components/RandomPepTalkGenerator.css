@@ -3,11 +3,5 @@
 }
 
 .button-pep-talk {
-  padding: 1rem;
   background-color: rgb(10, 112, 6);
-  margin: 2rem auto;
-  width: 15rem;
-  max-width: 95%;
-  border-radius: 12px;
-  font-weight: bold;
 }

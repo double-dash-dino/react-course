@@ -13,8 +13,11 @@ const RandomSentenceGenerator = (props) => {
 
   return (
     <Card>
-      <RandomPepTalkGenerator getSentence={onGetSentence} />
-      <RandomShakespeareInsultGenerator getSentence={onGetSentence} />
+      <div className="generator-controls">
+        <RandomPepTalkGenerator getSentence={onGetSentence} />
+        <RandomShakespeareInsultGenerator getSentence={onGetSentence} />
+      </div>
+
       <RandomSentence sentence={sentence} />
     </Card>
   );

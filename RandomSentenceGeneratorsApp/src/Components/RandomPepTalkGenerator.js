@@ -107,9 +107,8 @@ const RandomPepTalkGenerator = (props) => {
 
   return (
     <div className="pep-talk-box">
-      <p>Need pep talk?</p>
       <button onClick={clickHandler} className="button-pep-talk">
-        Yes please!
+        Give me some pep talk!
       </button>
     </div>
   );
