@@ -8,8 +8,9 @@
   margin: 2rem auto;
   width: 15rem;
   max-width: 95%;
-  min-height: 20%;
+  min-height: 60%;
   border-radius: 12px;
   font-weight: bold;
+  font-size: large;
   color: white;
 }
