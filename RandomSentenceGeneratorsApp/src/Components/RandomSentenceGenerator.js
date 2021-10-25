@@ -1,7 +1,7 @@
 import "./RandomSentenceGenerator.css";
 import React, { useState } from "react";
-import RandomPepTalkGenerator from "./RandomPepTalkGenerator.js";
-import RandomShakespeareInsultGenerator from "./RandomShakespeareInsultGenerator.js";
+import RandomPepTalkGenerator from "./RandomGenerators/RandomPepTalkGenerator.js";
+import RandomShakespeareInsultGenerator from "./RandomGenerators/RandomShakespeareInsultGenerator.js";
 import RandomSentence from "./RandomSentence.js";
 
 const RandomSentenceGenerator = (props) => {
