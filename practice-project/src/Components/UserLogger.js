@@ -42,15 +42,21 @@ const UserLogger = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div>
-        <h2 className="user-input__label">Username</h2>
+        <label htmlFor="username" className="user-input__label">
+          Username
+        </label>
         <input
+          id="username"
           type="text"
           className="user-input__field"
           value={enteredUsername}
           onChange={onUsernameChangeHandler}
         ></input>
-        <h2 className="user-input__label">Age (years)</h2>
+        <label htmlFor="age" className="user-input__label">
+          Age (years)
+        </label>
         <input
+          id="userAge"
           type="number"
           className="user-input__field"
           value={enteredAge}
