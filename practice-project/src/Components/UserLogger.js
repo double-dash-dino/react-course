@@ -16,7 +16,7 @@ const UserLogger = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (enteredAge <= 0) {
+    if (+enteredAge <= 0) {
       props.errorStatus("invalidAge");
     } else if (
       enteredUsername.trim().length > 0 ||
