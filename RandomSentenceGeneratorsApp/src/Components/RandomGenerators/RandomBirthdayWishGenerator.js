@@ -2,6 +2,7 @@ import "./RandomBirthdayWishGenerator.css";
 
 const RandomBirthdayWishGenerator = (props) => {
   const sentenceSnippets = {
+    // TODO: SORT OUT PUNCTUATION AT THE END
     part1: [
       "totally",
       "seriously",
