@@ -16,11 +16,14 @@ const UserLogger = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (enteredAge <= 0) {
+    if (enteredUsername.trim().length <= 0 || enteredAge.trim().length <= 0) {
+      props.errorStatus("emptyNameOrAge");
+    } else if (+enteredAge <= 0) {
       props.errorStatus("invalidAge");
-    }
-
-    if (enteredUsername.trim().length > 0 && enteredAge.trim().length > 0) {
+    } else if (
+      enteredUsername.trim().length > 0 &&
+      enteredAge.trim().length > 0
+    ) {
       const userData = {
         key: Math.random().toString(),
         username: enteredUsername,
@@ -30,23 +33,27 @@ const UserLogger = (props) => {
       setEnteredUsername("");
       setEnteredAge("");
       props.onSubmitNewUser(userData);
-    } else {
-      props.errorStatus("emptyNameOrAge");
     }
   };
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
-        <h2 className="user-input__label">Username</h2>
+      <div className="user-logger">
+        <label htmlFor="username" className="user-input__label">
+          Username
+        </label>
         <input
+          id="username"
           type="text"
           className="user-input__field"
           value={enteredUsername}
           onChange={onUsernameChangeHandler}
         ></input>
-        <h2 className="user-input__label">Age (years)</h2>
+        <label htmlFor="age" className="user-input__label">
+          Age (years)
+        </label>
         <input
+          id="userAge"
           type="number"
           className="user-input__field"
           value={enteredAge}
