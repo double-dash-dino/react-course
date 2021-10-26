@@ -57,3 +57,19 @@ const RandomBirthdayWishGenerator = (props) => {
     ],
   };
 };
+
+const getNumber = () => {
+  return Math.round(Math.random() * 14);
+};
+
+const getSentence = () => {
+  return (
+    "I hope your birthday " +
+    sentenceSnippets.part1[getNumber()] +
+    " " +
+    sentenceSnippets.part2[getNumber()] +
+    ", " +
+    sentenceSnippets.part3[getNumber()] +
+    "."
+  );
+};
