@@ -16,13 +16,10 @@ const UserLogger = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    if (+enteredAge <= 0) {
-      props.errorStatus("invalidAge");
-    } else if (
-      enteredUsername.trim().length > 0 ||
-      enteredAge.trim().length > 0
-    ) {
+    if (enteredUsername.trim().length <= 0 || enteredAge.trim().length <= 0) {
       props.errorStatus("emptyNameOrAge");
+    } else if (+enteredAge <= 0) {
+      props.errorStatus("invalidAge");
     } else if (
       enteredUsername.trim().length > 0 &&
       enteredAge.trim().length > 0
@@ -41,7 +38,7 @@ const UserLogger = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div>
+      <div className="user-logger">
         <label htmlFor="username" className="user-input__label">
           Username
         </label>
