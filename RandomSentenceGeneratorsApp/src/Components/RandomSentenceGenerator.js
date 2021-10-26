@@ -5,6 +5,7 @@ import RandomShakespeareInsultGenerator from "./RandomGenerators/RandomShakespea
 import RandomSentence from "./RandomSentence.js";
 import RandomThankYouGenerator from "./RandomGenerators/RandomThankYouGenerator.js";
 import RandomBirthdayWishGenerator from "./RandomGenerators/RandomBirthdayWishGenerator.js";
+import RandomCongratulationsGenerator from "./RandomGenerators/RandomCongratulationsGenerator.js";
 
 const RandomSentenceGenerator = (props) => {
   const [sentence, setSentence] = useState("");
@@ -21,6 +22,7 @@ const RandomSentenceGenerator = (props) => {
         <RandomShakespeareInsultGenerator getSentence={onGetSentence} />
         <RandomThankYouGenerator getSentence={onGetSentence} />
         <RandomBirthdayWishGenerator getSentence={onGetSentence} />
+        <RandomCongratulationsGenerator getSentence={onGetSentence} />
       </div>
 
       <RandomSentence sentence={sentence} />
