@@ -56,20 +56,22 @@ const RandomBirthdayWishGenerator = (props) => {
       "because it's ON",
     ],
   };
-};
 
-const getNumber = () => {
-  return Math.round(Math.random() * 14);
-};
+  const getNumber = () => {
+    return Math.round(Math.random() * 14);
+  };
 
-const getSentence = () => {
-  return (
-    "I hope your birthday " +
-    sentenceSnippets.part1[getNumber()] +
-    " " +
-    sentenceSnippets.part2[getNumber()] +
-    ", " +
-    sentenceSnippets.part3[getNumber()] +
-    "."
-  );
+  const getSentence = () => {
+    return (
+      "I hope your birthday " +
+      sentenceSnippets.part1[getNumber()] +
+      " " +
+      sentenceSnippets.part2[getNumber()] +
+      ", " +
+      sentenceSnippets.part3[getNumber()] +
+      "."
+    );
+  };
+
+  return <div className="birtday-wish-box"></div>;
 };
