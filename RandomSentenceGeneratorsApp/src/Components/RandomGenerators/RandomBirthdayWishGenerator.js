@@ -74,5 +74,17 @@ const RandomBirthdayWishGenerator = (props) => {
     );
   };
 
-  return <div className="birtday-wish-box"></div>;
+  const clickHandler = (event) => {
+    props.getSentence(getSentence);
+  };
+
+  return (
+    <div className="birtday-wish-box">
+      <button onClick={clickHandler} className="birthday-wish-button">
+        Wish me a happy birthday!
+      </button>
+    </div>
+  );
 };
+
+export default RandomBirthdayWishGenerator;
