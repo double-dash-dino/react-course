@@ -12,6 +12,9 @@ const RandomSentenceGenerator = (props) => {
   const onGetSentence = (sentence) => {
     setSentence(sentence);
   };
+  const clickHandler = (event) => {
+    setSentence("");
+  };
 
   return (
     <div>
@@ -25,7 +28,14 @@ const RandomSentenceGenerator = (props) => {
         <RandomCongratulationsGenerator getSentence={onGetSentence} />
       </div>
 
-      <RandomSentence sentence={sentence} />
+      <div className="sentence-display">
+        <RandomSentence sentence={sentence} />
+        {sentence.length > 0 && (
+          <button onClick={clickHandler} className="generator-controls">
+            Clear
+          </button>
+        )}
+      </div>
     </div>
   );
 };
