@@ -18,19 +18,19 @@ const Login = (props) => {
     };
   }, [enteredEmail]);
 
-  useEffect(() => {
-    const identifier = setTimeout(() => {
-      console.log("Checking form validity");
-      setFormIsValid(
-        enteredEmail.includes("@") && enteredPassword.trim().length > 6
-      );
-    }, 500);
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     console.log("Checking form validity");
+  //     setFormIsValid(
+  //       enteredEmail.includes("@") && enteredPassword.trim().length > 6
+  //     );
+  //   }, 500);
 
-    return () => {
-      console.log("cleanup");
-      clearTimeout(identifier);
-    };
-  }, [enteredEmail, enteredPassword]);
+  //   return () => {
+  //     console.log("cleanup");
+  //     clearTimeout(identifier);
+  //   };
+  // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
