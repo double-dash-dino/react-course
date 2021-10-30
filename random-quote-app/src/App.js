@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 const RandomQuoteApp = () => {
   const [quote, setQuote] = useState("a quote");
@@ -28,17 +29,17 @@ const RandomQuoteApp = () => {
     <div className="main-page" style={style}>
       <div className="quote-card">
         <h2 className="quote">
-          <i class="fa fa-quote-left" aria-hidden="true"></i>
+          <i className="fa fa-quote-left" aria-hidden="true"></i>
           {quote}
         </h2>
         <h5 className="author">- {author}</h5>
         <div className="quote-card-controls">
           <div className="sharing-buttons">
             <a className="btn" href="#">
-              <i class="fa fa-twitter fa-3x"></i>
+              <i className="fa fa-twitter fa-3x"></i>
             </a>
             <a className="btn" href="#">
-              <i class="fa fa-facebook fa-3x"></i>
+              <i className="fa fa-facebook fa-3x"></i>
             </a>
           </div>
           <div className="new-quote">

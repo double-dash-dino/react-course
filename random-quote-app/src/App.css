@@ -1,38 +1,75 @@
-.App {
+.main-page {
+  font-family: FontAwesome;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-card {
+  color: blue;
+  background: white;
+  border-radius: 8px;
+  padding: 20px 20px 10px 20px;
+
+  min-height: 30%;
+  min-width: 40%;
+  width: 40%;
+}
+
+.quote {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fa-quote-left {
+  padding-right: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.author {
+  text-align: right;
+  padding-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quote-card-controls {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.sharing-buttons {
+  display: flex;
+}
+
+.btn {
+  height: 3.5em;
+  width: 3.5em;
+  border-radius: 4px;
+  background-color: blue;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
   color: white;
+  text-align: center;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.new-quote {
+  align-self: flex-end;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-quote-button {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  padding: 15px 10px;
+  border-radius: 4px;
+  border: none;
 }
