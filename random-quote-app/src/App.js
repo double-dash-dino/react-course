@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import "./App.css";
 
 const RandomQuoteApp = () => {
-  const [quote, setQuote] = useState("a quote");
-  const [author, setAuthor] = useState("the author");
+  const [quote, setQuote] = useState(
+    "Life isn’t about getting and having, it’s about giving and being."
+  );
+  const [author, setAuthor] = useState("Kevin Kruse");
+  const [colour, setColour] = useState("#E27D60");
 
-  const colours = [];
+  const colours = ["#E27D60", "#85DCB8", "#E8A87C", "#C38D9E", "#41B3A3"];
 
-  let style = { backgroundColor: "blue" };
+  let backgroundStyle = { backgroundColor: colour };
+  let fontStyle = { color: colour };
 
-  const getRandomNumber = () => {
-    return Math.round(Math.random() * 101);
+  const getRandomNumber = (listLength) => {
+    return Math.round(Math.random() * listLength);
   };
 
   const clickHandler = () => {
@@ -19,31 +23,43 @@ const RandomQuoteApp = () => {
     )
       .then((response) => response.json())
       .then((responseJson) => {
-        let quoteNumber = getRandomNumber();
+        let quoteNumber = getRandomNumber(101);
         setQuote(responseJson.quotes[quoteNumber].quote);
         setAuthor(responseJson.quotes[quoteNumber].author);
+        setColour(colours[getRandomNumber(colours.length - 1)]);
       });
   };
 
+  const linkToTweet =
+    "https://twitter.com/intent/tweet?text=" +
+    quote +
+    "%0A%09- " +
+    author +
+    "%0A%0A Get more wisdom by visiting https://codepen.io/double-dash-dino/pen/ZEeyKYP";
+
   return (
-    <div className="main-page" style={style}>
-      <div className="quote-card">
+    <div className="main-page" style={backgroundStyle}>
+      <div className="quote-card" style={fontStyle}>
         <h2 className="quote">
-          <i className="fa fa-quote-left" aria-hidden="true"></i>
+          <i class="fa fa-quote-left" aria-hidden="true"></i>
           {quote}
         </h2>
         <h5 className="author">- {author}</h5>
         <div className="quote-card-controls">
           <div className="sharing-buttons">
-            <a className="btn" href="#">
-              <i className="fa fa-twitter fa-3x"></i>
+            <a className="btn" href={linkToTweet} style={backgroundStyle}>
+              <i class="fa fa-twitter fa-3x"></i>
             </a>
-            <a className="btn" href="#">
-              <i className="fa fa-facebook fa-3x"></i>
+            <a className="btn" href="#" style={backgroundStyle}>
+              <i class="fa fa-facebook fa-3x"></i>
             </a>
           </div>
           <div className="new-quote">
-            <button className="new-quote-button" onClick={clickHandler}>
+            <button
+              className="new-quote-button"
+              onClick={clickHandler}
+              style={backgroundStyle}
+            >
               New quote
             </button>
           </div>
