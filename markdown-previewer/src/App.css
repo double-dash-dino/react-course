@@ -14,11 +14,13 @@
   box-shadow: 10px 10px black;
   min-width: 50%;
   min-height: auto;
+  height: auto;
   margin-bottom: 50px;
 }
 
 .input {
   max-width: 60vw;
+  max-height: auto;
 }
 
 .input-header {
@@ -28,7 +30,7 @@
 
 .input-field {
   width: 100%;
-  height: 80%;
+  height: 10vh;
   background-color: rgb(255, 210, 88);
   overflow-y: scroll;
   resize: none;
