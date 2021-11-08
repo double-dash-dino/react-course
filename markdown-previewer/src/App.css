@@ -38,6 +38,7 @@
 
 .input-field:focus {
   border-style: dotted;
+  border-width: thin;
   outline: none;
 }
 
