@@ -10,6 +10,7 @@ function App() {
 
   const returnMarkdownText = (text) => {
     text = text.trim();
+
     text = text.split("\n");
     let h1Tag = /^#(?!#)/g;
     let h2Tag = /^#{2}(?!#)/g;
@@ -17,6 +18,8 @@ function App() {
     let h4Tag = /^#{4}(?!#)/g;
     let h5Tag = /^#{5}(?!#)/g;
     let h6Tag = /^#{6}/g;
+    let codeSnippetTag = /`{3}((.|\n)*)`{3}/;
+
     for (let i = 0; i < text.length; i++) {
       if (h1Tag.test(text[i])) {
         text[i] = <h1>{text[i].trim().replace(h1Tag, "")}</h1>;
@@ -30,6 +33,10 @@ function App() {
         text[i] = <h5>{text[i].trim().replace(h5Tag, "")}</h5>;
       } else if (h6Tag.test(text[i])) {
         text[i] = <h6>{text[i].trim().replace(h6Tag, "")}</h6>;
+      } else if (codeSnippetTag.test(text[i])) {
+        text[i] = (
+          <p className="codeSnippet">{text[i].trim().replaceAll("```", "")}</p>
+        );
       }
     }
 
