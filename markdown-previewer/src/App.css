@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+  background-color: #ffda8a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border-style: solid;
+  border-width: thin;
+  box-shadow: 10px 10px black;
+  min-width: 50%;
+  min-height: auto;
+  margin-bottom: 50px;
+}
+
+.input {
+  max-width: 60vw;
+}
+
+.input-header {
+  height: 20%;
+  background-color: rgb(255, 174, 0);
+}
+
+.input-field {
+  width: 100%;
+  height: 80%;
+  background-color: rgb(255, 210, 88);
+  overflow-y: scroll;
+  resize: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+.input-field:focus {
+  border-style: dotted;
+  outline: none;
+}
+
+.output {
+  max-width: 80vw;
+}
+
+.output-header {
+  height: 20%;
+  background-color: rgb(255, 174, 0);
+}
+
+.output-field {
+  width: 100%;
+  height: 80%;
+  background-color: rgb(255, 210, 88);
+}
