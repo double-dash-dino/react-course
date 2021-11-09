@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+// import marked from "marked";
 
 function App() {
   const [input, setInput] = useState("# Welcome to the markdown previewer");
@@ -56,7 +57,17 @@ function App() {
       </div>
       <div className="output card">
         <div className="output-header">Previewer</div>
-        <div className="output-ouput">{returnMarkdownText(input)}</div>
+        <div className="output-field" id="content">
+          {/* {returnMarkdownText(input)} */}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script>
+          {
+            (document.getElementById("content").innerHTML = marked.parse(
+              "#Marked in the browser\n\nRendered by **marked**."
+            ))
+          }
+        </script>
       </div>
     </div>
   );
