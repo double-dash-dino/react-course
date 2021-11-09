@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-// import marked from "marked";
+import { marked } from "marked/lib/marked.esm.js";
 
 function App() {
   const [input, setInput] = useState("# Welcome to the markdown previewer");
@@ -8,6 +8,7 @@ function App() {
   const inputChangeHandler = (event) => {
     setInput(event.target.value);
   };
+  console.log(marked.parse("#sometext"));
 
   const returnMarkdownText = (text) => {
     text = text.trim();
@@ -44,6 +45,10 @@ function App() {
     return text;
   };
 
+  // const textToDisplay = marked.parse(
+  //   "# Marked in Node.js\n\nRendered by **marked**."
+  // );
+
   return (
     <div className="App">
       <div className="input card">
@@ -62,11 +67,11 @@ function App() {
         </div>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script>
-          {
+          {/* {
             (document.getElementById("content").innerHTML = marked.parse(
               "#Marked in the browser\n\nRendered by **marked**."
             ))
-          }
+          } */}
         </script>
       </div>
     </div>
