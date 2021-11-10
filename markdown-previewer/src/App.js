@@ -49,7 +49,6 @@ function App() {
           </div>
           <button className="expand-button" onClick={inputClickHandler}>
             {displayIcon(inputCardSize)}
-            {/* <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" /> */}
           </button>
         </div>
         <textarea
@@ -66,7 +65,6 @@ function App() {
           </div>
           <button className="expand-button" onClick={OutputClickHandler}>
             {displayIcon(outputCardSize)}
-            {/* <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" /> */}
           </button>
         </div>
         <div
