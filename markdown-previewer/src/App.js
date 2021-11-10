@@ -3,12 +3,22 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpandAlt, faCompressAlt } from "@fortawesome/free-solid-svg-icons";
 
-import { parse } from "marked/src/marked";
+import { marked, parse } from "marked/src/marked";
 // import { icon } from "@fortawesome/fontawesome-svg-core";
 
 // /* global marked */
 
 function App() {
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    pedantic: false,
+    gfm: true,
+    breaks: true,
+    sanitize: true,
+    smartLists: true,
+    smartypants: true,
+    xhtml: true,
+  });
   const [input, setInput] = useState("# Welcome to the markdown previewer");
   const [inputCardSize, setInputCardSize] = useState("");
 
