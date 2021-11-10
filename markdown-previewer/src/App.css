@@ -24,11 +24,18 @@
   max-height: auto;
 }
 
+.input.expanded.card {
+  position: fixed;
+  width: 70vw;
+  height: 70vh;
+}
+
 .card-header {
   height: 20%;
   background-color: rgb(255, 174, 0);
   display: grid;
   grid-template-columns: 10% 80% 10%;
+  padding: 5px 5px 5px 5px;
 }
 
 .header-title {
