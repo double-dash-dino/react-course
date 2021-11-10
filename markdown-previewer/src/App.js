@@ -8,52 +8,53 @@ import { parse } from "marked/src/marked";
 
 function App() {
   const [input, setInput] = useState("# Welcome to the markdown previewer");
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [display, setDisplay] = useState("");
-
-  const changeHandler = (props) => {};
+  const [inputCardSize, setInputCardSize] = useState("");
 
   const inputChangeHandler = (event) => {
     setInput(event.target.value);
   };
-
-  let card_styles = "";
-
-  const clickHandler = (event) => {
-    if (isExpanded) {
-      setIsExpanded(false);
-      card_styles = "";
+  const inputClickHandler = (event) => {
+    if (inputCardSize === "") {
+      setInputCardSize("expanded");
     } else {
-      setIsExpanded(true);
-      card_styles = " expanded";
+      setInputCardSize("");
     }
-    console.log("is now", isExpanded, card_styles);
+  };
+
+  const [outputCardSize, setOutputCardSize] = useState("");
+
+  const OutputClickHandler = (event) => {
+    if (outputCardSize === "") {
+      setOutputCardSize("expanded");
+    } else {
+      setOutputCardSize("");
+    }
   };
 
   return (
     <div className="App">
-      <div className={"input card" + card_styles} onChange={changeHandler}>
+      <div className={"input card " + inputCardSize}>
         <div className="card-header">
           <div className="header-title">
             <h3>Editor</h3>
           </div>
-          <button className="expand-button" onClick={clickHandler}>
+          <button className="expand-button" onClick={inputClickHandler}>
             <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />
           </button>
         </div>
         <textarea
           onChange={inputChangeHandler}
-          className="input-field"
+          className={"input-field " + inputCardSize}
           type="text"
           value={input}
         ></textarea>
       </div>
-      <div className="output card">
+      <div className={"output card " + outputCardSize}>
         <div className="card-header">
           <div className="header-title">
             <h3>Output</h3>
           </div>
-          <button className="expand-button">
+          <button className="expand-button" onClick={OutputClickHandler}>
             <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />
           </button>
         </div>
