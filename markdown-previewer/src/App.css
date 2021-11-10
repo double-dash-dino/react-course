@@ -69,7 +69,17 @@
   grid-column-start: 3;
   border: none;
   background-color: inherit;
-  &:hover {
-    color: white;
-  }
+}
+.expand-button:hover {
+  color: white;
+}
+
+.fa-expand-arrows-alt {
+  color: black;
+  background-color: red;
+  position: fixed;
+}
+
+.fa-expand-arrows-alt:hover {
+  color: white;
 }

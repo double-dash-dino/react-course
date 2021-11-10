@@ -44,6 +44,7 @@ const RandomQuoteApp = () => {
           <i class="fa fa-quote-left" aria-hidden="true"></i>
           {quote}
         </h2>
+
         <h5 className="author">- {author}</h5>
         <div className="quote-card-controls">
           <div className="sharing-buttons">

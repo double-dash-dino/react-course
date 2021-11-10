@@ -1,5 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExpandArrowsAlt } from "@fortawesome/free-solid-svg-icons";
 import { parse } from "marked/src/marked";
 
 // /* global marked */
@@ -17,7 +19,7 @@ function App() {
         <div className="card-header">
           <div className="header-title">Editor</div>
           <button className="expand-button">
-            <i class="fas fa-expand-arrows-alt"></i>Hi
+            <FontAwesomeIcon icon={faExpandArrowsAlt} />
           </button>
         </div>
         <textarea
@@ -31,7 +33,7 @@ function App() {
         <div className="card-header">
           <div className="header-title">Editor</div>
           <button className="expand-button">
-            <i class="fas fa-expand-arrows-alt"></i>Hi
+            <FontAwesomeIcon icon={faExpandArrowsAlt} />
           </button>
         </div>
         <div
