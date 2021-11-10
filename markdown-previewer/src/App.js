@@ -1,7 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExpandAlt } from "@fortawesome/free-solid-svg-icons";
+import { faExpandAlt, faCompressAlt } from "@fortawesome/free-solid-svg-icons";
+
 import { parse } from "marked/src/marked";
 
 // /* global marked */
@@ -31,6 +32,14 @@ function App() {
     }
   };
 
+  const displayIcon = (cardSize) => {
+    if (cardSize === "") {
+      return <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />;
+    } else {
+      return <FontAwesomeIcon icon={faCompressAlt} className="fa-2x" />;
+    }
+  };
+
   return (
     <div className="App">
       <div className={"input card " + inputCardSize}>
@@ -39,7 +48,8 @@ function App() {
             <h3>Editor</h3>
           </div>
           <button className="expand-button" onClick={inputClickHandler}>
-            <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />
+            {displayIcon(inputCardSize)}
+            {/* <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" /> */}
           </button>
         </div>
         <textarea
@@ -55,7 +65,8 @@ function App() {
             <h3>Output</h3>
           </div>
           <button className="expand-button" onClick={OutputClickHandler}>
-            <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />
+            {displayIcon(outputCardSize)}
+            {/* <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" /> */}
           </button>
         </div>
         <div
