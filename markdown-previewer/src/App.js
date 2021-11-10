@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExpandAlt, faCompressAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { parse } from "marked/src/marked";
+// import { icon } from "@fortawesome/fontawesome-svg-core";
 
 // /* global marked */
 
@@ -33,11 +34,13 @@ function App() {
   };
 
   const displayIcon = (cardSize) => {
+    let iconToDisplay = "";
     if (cardSize === "") {
-      return <FontAwesomeIcon icon={faExpandAlt} className="fa-2x" />;
+      iconToDisplay = faExpandAlt;
     } else {
-      return <FontAwesomeIcon icon={faCompressAlt} className="fa-2x" />;
+      iconToDisplay = faCompressAlt;
     }
+    return <FontAwesomeIcon icon={iconToDisplay} className="fa-2x" />;
   };
 
   return (

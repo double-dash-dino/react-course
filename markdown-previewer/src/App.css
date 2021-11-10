@@ -77,6 +77,14 @@
   background-color: rgb(255, 210, 88);
   padding: 20px;
   box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
 }
 
 .expand-button {
