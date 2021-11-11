@@ -1,4 +1,5 @@
 .App {
+  font-family: FontAwesome;
   text-align: center;
   background-color: #ffda8a;
   min-height: 100vh;
@@ -14,6 +15,7 @@
   box-shadow: 10px 10px black;
   min-width: 50%;
   min-height: auto;
+  height: auto;
   margin-bottom: 50px;
 }
 
@@ -21,23 +23,41 @@
   max-width: 60vw;
 }
 
-.input-header {
+.input.expanded {
+  /* position: fixed; */
+  width: 70vw;
+  height: 70vh;
+}
+
+.card-header {
   height: 20%;
   background-color: rgb(255, 174, 0);
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  padding: 5px 5px 5px 5px;
+}
+
+.header-title {
+  grid-column-start: 2;
 }
 
 .input-field {
   width: 100%;
-  height: 80%;
+  min-height: 10vh;
   background-color: rgb(255, 210, 88);
   overflow-y: scroll;
   resize: none;
   box-sizing: border-box;
   border: none;
 }
+.input-field.expanded {
+  height: 80%;
+  box-sizing: border-box;
+}
 
 .input-field:focus {
   border-style: dotted;
+  border-width: thin;
   outline: none;
 }
 
@@ -45,13 +65,45 @@
   max-width: 80vw;
 }
 
-.output-header {
-  height: 20%;
-  background-color: rgb(255, 174, 0);
+.output.expanded {
+  position: fixed;
+  width: 70vw;
+  height: 70vh;
 }
 
 .output-field {
   width: 100%;
   height: 80%;
   background-color: rgb(255, 210, 88);
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.expand-button {
+  padding-right: 10px;
+  justify-self: flex-end;
+  grid-column-start: 3;
+  border: none;
+  background-color: inherit;
+}
+.expand-button:hover {
+  color: white;
+}
+
+.fa-expand-arrows-alt {
+  color: black;
+  background-color: red;
+  position: fixed;
+}
+
+.fa-expand-arrows-alt:hover {
+  color: white;
 }
