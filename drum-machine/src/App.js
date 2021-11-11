@@ -5,8 +5,11 @@ function App() {
   const [activeKey, setActiveKey] = useState("");
   useEffect(() => {
     const handleKeydown = (event) => {
-      console.log(event.key);
       setActiveKey(event.key);
+      console.log(event.key);
+      if (event.key === "q") {
+        clickHandler();
+      }
     };
     document.addEventListener("keydown", handleKeydown);
     return () => {
@@ -59,5 +62,8 @@ function App() {
     </div>
   );
 }
+
+// Audio credits:
+// "Bamboo Swing, B3.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
 
 export default App;
