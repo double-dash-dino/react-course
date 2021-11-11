@@ -5,17 +5,17 @@ function App() {
     <div className="App">
       <div className="drum-card">
         <div className="class-header">
-          Welcome to the drum app
+          Welcome to the app
           <div className="drum-pad">
-            <button>Q</button>
-            <button>W</button>
-            <button>E</button>
-            <button>A</button>
-            <button>S</button>
-            <button>D</button>
-            <button>Z</button>
-            <button>X</button>
-            <button>C</button>
+            <button className="drum-button">Q</button>
+            <button className="drum-button">W</button>
+            <button className="drum-button">E</button>
+            <button className="drum-button">A</button>
+            <button className="drum-button">S</button>
+            <button className="drum-button">D</button>
+            <button className="drum-button">Z</button>
+            <button className="drum-button">X</button>
+            <button className="drum-button">C</button>
           </div>
           <div className="drum-settings"></div>
         </div>
