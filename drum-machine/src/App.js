@@ -1,15 +1,19 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function App() {
-  const logKey = (event) => {
-    console.log(event.key === "q");
-    if (event.key === "q") {
-      document.getElementById("button1").click();
-    }
-    event.Handled = true;
-  };
-  document.addEventListener("keydown", logKey);
+  const [activeKey, setActiveKey] = useState("");
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      console.log(event.key);
+      setActiveKey(event.key);
+    };
+    document.addEventListener("keydown", handleKeydown);
+    return () => {
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, [activeKey]);
+
   const [isClicked, setIsClicked] = useState(false);
 
   const clickHandler = () => {
@@ -47,7 +51,7 @@ function App() {
           </div>
           <div className="drum-settings">
             Settings
-            <div>Settings1</div>
+            <div>Settings 1</div>
             <div>Settings 2</div>
           </div>
         </div>
