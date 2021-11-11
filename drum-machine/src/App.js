@@ -1,12 +1,22 @@
 import "./App.css";
-const logKey = (event) => {
-  console.log(event.key === "q");
-  if (event.key === "q") {
-    document.getElementById("button1").click();
-  }
-};
-document.addEventListener("keydown", logKey);
+import React, { useState } from "react";
+
 function App() {
+  const logKey = (event) => {
+    console.log(event.key === "q");
+    if (event.key === "q") {
+      document.getElementById("button1").click();
+    }
+    event.Handled = true;
+  };
+  document.addEventListener("keydown", logKey);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickHandler = () => {
+    setIsClicked(!isClicked);
+    console.log("Is clicked: ", isClicked);
+  };
+
   return (
     <div className="App">
       <div className="drum-card">
@@ -15,7 +25,12 @@ function App() {
           <div className="drum-pad">
             <div>Pad header</div>
             <div className="drum-buttons">
-              <button className="drum-button" value="q" id="button1">
+              <button
+                className="drum-button"
+                value="q"
+                id="button1"
+                onClick={clickHandler}
+              >
                 Q
               </button>
               <button className="drum-button" value="w">
