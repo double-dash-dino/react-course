@@ -1,7 +1,13 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import UIfx from "uifx";
+import bamboo_swing from "./assets/audio/bamboo_swing.wav";
 
 function App() {
+  const bambooSound = new UIfx(bamboo_swing, {
+    volume: 1,
+    throttleMs: 100,
+  });
   const [activeKey, setActiveKey] = useState("");
   useEffect(() => {
     const handleKeydown = (event) => {
@@ -21,6 +27,7 @@ function App() {
 
   const clickHandler = () => {
     setIsClicked(!isClicked);
+    bambooSound.play();
     console.log("Is clicked: ", isClicked);
   };
 
@@ -32,6 +39,8 @@ function App() {
           <div className="drum-pad">
             <div>Pad header</div>
             <div className="drum-buttons">
+              {/* <audio id="sound1" src="../assets/audio/bamboo_swing.wav"></audio> */}
+
               <button
                 className="drum-button"
                 value="q"
