@@ -17,7 +17,7 @@ function App() {
             <button className="drum-button">X</button>
             <button className="drum-button">C</button>
           </div>
-          <div className="drum-settings"></div>
+          <div className="drum-settings">Here be settings</div>
         </div>
       </div>
     </div>
