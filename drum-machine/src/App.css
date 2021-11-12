@@ -13,7 +13,7 @@
 .drum-card {
   border: 8px solid #6800ca;
   padding: 20px;
-  min-width: 80%;
+  width: 600px;
   min-height: 30vh;
 }
 
@@ -38,6 +38,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .drum-button {
@@ -57,7 +58,29 @@
   background-color: rgba(255, 255, 255, 0.253);
 }
 
+.clicked {
+  border-style: inset;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+
 .drum-settings {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  background-color: rgb(95, 95, 95);
+  padding: 10px;
+}
+
+.volume-setting {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 50px 20px;
+}
+.sound-name {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: #4b4b4b;
+  border-radius: 1px;
+  justify-content: center;
+  align-items: center;
 }
