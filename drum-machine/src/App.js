@@ -25,22 +25,6 @@ const kickDrum = new UIfx(kick_drum, {
   volume: 1,
   throttleMs: 0,
 });
-
-const trashCymbal = new UIfx(trash_cymbal, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const cowBell = new UIfx(cowbell, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const crashSoft = new UIfx(crash_soft, {
-  volume: 1,
-  throttleMs: 0,
-});
-
 const tom1 = new UIfx(tom01, {
   volume: 1,
   throttleMs: 0,
@@ -56,11 +40,40 @@ const tom3 = new UIfx(tom03, {
   throttleMs: 0,
 });
 
+const trashCymbal = new UIfx(trash_cymbal, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const crashSoft = new UIfx(crash_soft, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const cowBell = new UIfx(cowbell, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const sounds = [
+  hiHat,
+  snareDrum,
+  kickDrum,
+  tom1,
+  tom2,
+  tom3,
+  trashCymbal,
+  crashSoft,
+  cowBell,
+];
+
 function App() {
   const [activeKey, setActiveKey] = useState("");
   const [volume, setVolume] = useState(0.5);
 
-  (hiHat, snareDrum).setVolume(volume);
+  for (let i = 0; i < sounds.length; i++) {
+    sounds[i].setVolume(volume);
+  }
 
   const handleVolume = (event) => {
     setVolume(parseFloat(event.target.value));
