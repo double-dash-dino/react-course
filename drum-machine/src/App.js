@@ -11,7 +11,6 @@ import tom01 from "./assets/audio/tom01.wav";
 import tom02 from "./assets/audio/tom02.wav";
 import tom03 from "./assets/audio/tom03.wav";
 
-let vol = 0.5;
 const hiHat = new UIfx(hi_hat, {
   volume: 1,
   throttleMs: 0,
@@ -65,7 +64,6 @@ function App() {
 
   const handleVolume = (event) => {
     setVolume(parseFloat(event.target.value));
-    vol = volume;
   };
   useEffect(() => {
     const handleKeydown = (event) => {
@@ -94,7 +92,7 @@ function App() {
     return () => {
       document.removeEventListener("keydown", handleKeydown);
     };
-  }, [activeKey]);
+  }, [activeKey, volume]);
 
   const clickHandlerQ = () => {
     hiHat.play();
