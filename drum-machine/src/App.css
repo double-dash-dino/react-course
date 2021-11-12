@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+  background-color: #363636;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.drum-card {
+  border: 8px solid #6800ca;
+  padding: 20px;
+  min-width: 80%;
+  min-height: 30vh;
+}
+
+.card-header {
+  padding: 15px;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.drum-buttons {
+  padding: 10px 5px 10px 5px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  grid-gap: 5px;
+}
+
+.drum-pad {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drum-button {
+  aspect-ratio: 1;
+  border: 3px solid #c7027f;
+  background-color: #363636;
+  color: white;
+  font-weight: bold;
+}
+
+.drum-button:hover {
+  background-color: rgba(255, 255, 255, 0.39);
+}
+
+.drum-button:active {
+  border-style: inset;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+
+.drum-settings {
+  width: 50%;
+  background-color: rgb(95, 95, 95);
+}
