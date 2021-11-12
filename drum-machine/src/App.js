@@ -178,50 +178,55 @@ function App() {
 
   return (
     <div className="App">
-      <div className="drum-card">
+      <div id="drum-machine" className="drum-card">
         <div className="card-header">Make some noise!</div>
         <div className="card-body">
-          <div className="drum-pad">
-            <div className="drum-buttons">
-              {/* <audio id="sound1" src="../assets/audio/bamboo_swing.wav"></audio> */}
-
-              <button
-                className="drum-button "
-                value="q"
-                id="button1"
-                onClick={clickHandlerQ}
-              >
-                Q
-              </button>
-              <button
-                className="drum-button "
-                value="w"
-                onClick={clickHandlerW}
-              >
-                W
-              </button>
-              <button className="drum-button" onClick={clickHandlerE}>
-                E
-              </button>
-              <button className="drum-button" onClick={clickHandlerA}>
-                A
-              </button>
-              <button className="drum-button" onClick={clickHandlerS}>
-                S
-              </button>
-              <button className="drum-button" onClick={clickHandlerD}>
-                D
-              </button>
-              <button className="drum-button" onClick={clickHandlerZ}>
-                Z
-              </button>
-              <button className="drum-button" onClick={clickHandlerX}>
-                X
-              </button>
-              <button className="drum-button" onClick={clickHandlerC}>
-                C
-              </button>
-            </div>
+          <div className="drum-buttons">
+            <button
+              className="drum-pad"
+              value="q"
+              id="hi-hat"
+              onClick={clickHandlerQ}
+            >
+              Q
+            </button>
+            <button
+              id="snare-drum"
+              className="drum-pad "
+              value="w"
+              onClick={clickHandlerW}
+            >
+              W
+            </button>
+            <button id="kick-drum" className="drum-pad" onClick={clickHandlerE}>
+              E
+            </button>
+            <button id="tom1" className="drum-pad" onClick={clickHandlerA}>
+              A
+            </button>
+            <button id="tom2" className="drum-pad" onClick={clickHandlerS}>
+              S
+            </button>
+            <button id="tom3" className="drum-pad" onClick={clickHandlerD}>
+              D
+            </button>
+            <button
+              id="trash-cymbal"
+              className="drum-pad"
+              onClick={clickHandlerZ}
+            >
+              Z
+            </button>
+            <button
+              id="crash-cymbal"
+              className="drum-pad"
+              onClick={clickHandlerX}
+            >
+              X
+            </button>
+            <button id="cow-bell" className="drum-pad" onClick={clickHandlerC}>
+              C
+            </button>
           </div>
           <div className="drum-settings">
             <div className="volume-setting">
@@ -236,15 +241,14 @@ function App() {
                 onChange={handleVolume}
               ></input>
             </div>
-            <div className="sound-name">{instrumentName(activeKey)}</div>
+            <div id="display" className="sound-name">
+              {instrumentName(activeKey)}
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-// Audio credits:
-// "Bamboo Swing, B3.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
 
 export default App;

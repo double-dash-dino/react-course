@@ -27,6 +27,7 @@
 }
 
 .drum-buttons {
+  width: 50%;
   padding: 10px 5px 10px 5px;
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -35,13 +36,6 @@
 }
 
 .drum-pad {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.drum-button {
   aspect-ratio: 1;
   border: 3px solid #c7027f;
   background-color: #363636;
@@ -49,11 +43,11 @@
   font-weight: bold;
 }
 
-.drum-button:hover {
+.drum-pad:hover {
   background-color: rgba(255, 255, 255, 0.39);
 }
 
-.drum-button:active {
+.drum-pad:active {
   border-style: inset;
   background-color: rgba(255, 255, 255, 0.253);
 }
