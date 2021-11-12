@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import UIfx from "uifx";
 import bamboo_swing from "./assets/audio/bamboo_swing.wav";
+import hi_hat from "./assets/audio/hi-hat.wav";
 
 function App() {
   const bambooSound = new UIfx(bamboo_swing, {
