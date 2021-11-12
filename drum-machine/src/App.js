@@ -86,9 +86,7 @@ function App() {
             <div>
               Settings 1<input type="range"></input>
             </div>
-            <div>
-              Settings 2<input type="range"></input>
-            </div>
+            <div>Settings 2</div>
           </div>
         </div>
       </div>
