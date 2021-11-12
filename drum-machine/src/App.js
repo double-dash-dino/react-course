@@ -21,6 +21,11 @@ function App() {
     throttleMs: 0,
   });
 
+  const kickDrum = new UIfx(kick_drum, {
+    volume: 1,
+    throttleMs: 0,
+  });
+
   const [activeKey, setActiveKey] = useState("");
   useEffect(() => {
     const handleKeydown = (event) => {
@@ -47,7 +52,9 @@ function App() {
     snareDrum.play();
   };
 
-  const clickHandlerE = () => {};
+  const clickHandlerE = () => {
+    kickDrum.play();
+  };
 
   return (
     <div className="App">
