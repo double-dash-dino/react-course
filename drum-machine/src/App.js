@@ -6,27 +6,33 @@ import hi_hat from "./assets/audio/hi_hat.wav";
 import snare_drum from "./assets/audio/snare.wav";
 import kick_drum from "./assets/audio/kick.wav";
 
+const bambooSound = new UIfx(bamboo_swing, {
+  volume: 1,
+  throttleMs: 50,
+});
+const hiHat = new UIfx(hi_hat, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const snareDrum = new UIfx(snare_drum, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const kickDrum = new UIfx(kick_drum, {
+  volume: 1,
+  throttleMs: 0,
+});
+
 function App() {
-  const bambooSound = new UIfx(bamboo_swing, {
-    volume: 1,
-    throttleMs: 50,
-  });
-  const hiHat = new UIfx(hi_hat, {
-    volume: 1,
-    throttleMs: 0,
-  });
-
-  const snareDrum = new UIfx(snare_drum, {
-    volume: 1,
-    throttleMs: 0,
-  });
-
-  const kickDrum = new UIfx(kick_drum, {
-    volume: 1,
-    throttleMs: 0,
-  });
-
   const [activeKey, setActiveKey] = useState("");
+  const [volume, setVolume] = useState("50");
+
+  const handleVolume = (event) => {
+    console.log(event.target.value);
+    setVolume(event.target.value);
+  };
   useEffect(() => {
     const handleKeydown = (event) => {
       setActiveKey(event.key);
@@ -90,10 +96,21 @@ function App() {
           </div>
           <div className="drum-settings">
             Settings
-            <div>
-              Settings 1<input type="range"></input>
+            <div className="volume-setting">
+              Volume
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                className="volume-slider"
+                onChange={handleVolume}
+              ></input>
             </div>
-            <div>Settings 2</div>
+            <div className="kit-toggle-setting">
+              Settings 2<input type="range"></input>
+            </div>
           </div>
         </div>
       </div>

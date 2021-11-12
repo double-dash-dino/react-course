@@ -38,6 +38,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .drum-button {
@@ -58,6 +59,19 @@
 }
 
 .drum-settings {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  background-color: rgb(95, 95, 95);
+  padding: 10px;
+}
+
+.volume-setting {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.volume-slider {
+  padding: 10px 10px 10px 10px;
+  color: #ca0000;
 }
