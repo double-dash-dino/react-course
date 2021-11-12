@@ -2,20 +2,35 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import UIfx from "uifx";
 import bamboo_swing from "./assets/audio/bamboo_swing.wav";
-import hi_hat from "./assets/audio/hi-hat.wav";
+import hi_hat from "./assets/audio/hi_hat.wav";
+import snare_drum from "./assets/audio/snare.wav";
+import kick_drum from "./assets/audio/kick.wav";
 
 function App() {
   const bambooSound = new UIfx(bamboo_swing, {
     volume: 1,
-    throttleMs: 100,
+    throttleMs: 50,
   });
+  const hiHat = new UIfx(hi_hat, {
+    volume: 1,
+    throttleMs: 0,
+  });
+
+  const snareDrum = new UIfx(snare_drum, {
+    volume: 1,
+    throttleMs: 0,
+  });
+
   const [activeKey, setActiveKey] = useState("");
   useEffect(() => {
     const handleKeydown = (event) => {
       setActiveKey(event.key);
-      console.log(event.key);
       if (event.key === "q") {
-        clickHandler();
+        clickHandlerQ();
+      } else if (event.key === "w") {
+        clickHandlerW();
+      } else if (event.key === "e") {
+        clickHandlerE();
       }
     };
     document.addEventListener("keydown", handleKeydown);
@@ -24,13 +39,15 @@ function App() {
     };
   }, [activeKey]);
 
-  const [isClicked, setIsClicked] = useState(false);
-
-  const clickHandler = () => {
-    setIsClicked(!isClicked);
-    bambooSound.play();
-    console.log("Is clicked: ", isClicked);
+  const clickHandlerQ = () => {
+    hiHat.play();
   };
+
+  const clickHandlerW = () => {
+    snareDrum.play();
+  };
+
+  const clickHandlerE = () => {};
 
   return (
     <div className="App">
@@ -46,14 +63,16 @@ function App() {
                 className="drum-button"
                 value="q"
                 id="button1"
-                onClick={clickHandler}
+                onClick={clickHandlerQ}
               >
                 Q
               </button>
-              <button className="drum-button" value="w">
+              <button className="drum-button" value="w" onClick={clickHandlerW}>
                 W
               </button>
-              <button className="drum-button">E</button>
+              <button className="drum-button" onClick={clickHandlerE}>
+                E
+              </button>
               <button className="drum-button">A</button>
               <button className="drum-button">S</button>
               <button className="drum-button">D</button>
@@ -64,8 +83,12 @@ function App() {
           </div>
           <div className="drum-settings">
             Settings
-            <div>Settings 1</div>
-            <div>Settings 2</div>
+            <div>
+              Settings 1<input type="range"></input>
+            </div>
+            <div>
+              Settings 2<input type="range"></input>
+            </div>
           </div>
         </div>
       </div>
