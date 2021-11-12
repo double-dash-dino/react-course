@@ -8,6 +8,9 @@ import kick_drum from "./assets/audio/kick.wav";
 import trash_cymbal from "./assets/audio/trash-hard.wav";
 import cowbell from "./assets/audio/cowbell.wav";
 import crash_soft from "./assets/audio/crash-soft.wav";
+import tom01 from "./assets/audio/tom01.wav";
+import tom02 from "./assets/audio/tom02.wav";
+import tom03 from "./assets/audio/tom03.wav";
 
 const bambooSound = new UIfx(bamboo_swing, {
   volume: 1,
@@ -39,6 +42,21 @@ const cowBell = new UIfx(cowbell, {
 });
 
 const crashSoft = new UIfx(crash_soft, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const tom1 = new UIfx(tom01, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const tom2 = new UIfx(tom02, {
+  volume: 1,
+  throttleMs: 0,
+});
+
+const tom3 = new UIfx(tom03, {
   volume: 1,
   throttleMs: 0,
 });
@@ -84,11 +102,17 @@ function App() {
     kickDrum.play();
   };
 
-  const clickHandlerA = () => {};
+  const clickHandlerA = () => {
+    tom1.play();
+  };
 
-  const clickHandlerS = () => {};
+  const clickHandlerS = () => {
+    tom2.play();
+  };
 
-  const clickHandlerD = () => {};
+  const clickHandlerD = () => {
+    tom3.play();
+  };
 
   const clickHandlerZ = () => {
     trashCymbal.play();
