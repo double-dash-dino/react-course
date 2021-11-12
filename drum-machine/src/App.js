@@ -80,7 +80,6 @@ function App() {
   };
   useEffect(() => {
     const handleKeydown = (event) => {
-      setActiveKey(event.key);
       if (event.key === "q") {
         clickHandlerQ();
       } else if (event.key === "w") {
@@ -108,39 +107,73 @@ function App() {
   }, [activeKey, volume]);
 
   const clickHandlerQ = () => {
+    setActiveKey("q");
     hiHat.play();
   };
 
   const clickHandlerW = () => {
+    setActiveKey("w");
     snareDrum.play();
   };
 
   const clickHandlerE = () => {
+    setActiveKey("e");
     kickDrum.play();
   };
 
   const clickHandlerA = () => {
+    setActiveKey("a");
     tom1.play();
   };
 
   const clickHandlerS = () => {
+    setActiveKey("s");
     tom2.play();
   };
 
   const clickHandlerD = () => {
+    setActiveKey("d");
     tom3.play();
   };
 
   const clickHandlerZ = () => {
+    setActiveKey("z");
     trashCymbal.play();
   };
 
   const clickHandlerX = () => {
+    setActiveKey("x");
     crashSoft.play();
   };
 
   const clickHandlerC = () => {
+    setActiveKey("c");
     cowBell.play();
+  };
+
+  const instrumentName = (key) => {
+    switch (key) {
+      case "q":
+        return "Hi-hat";
+      case "w":
+        return "Snare drum";
+      case "e":
+        return "Kick drum";
+      case "a":
+        return "Tom 1";
+      case "s":
+        return "Tom 2";
+      case "d":
+        return "Tom 3";
+      case "z":
+        return "Trash cymbal";
+      case "x":
+        return "Crash cymbal";
+      case "c":
+        return "Cow bell";
+      default:
+        return "";
+    }
   };
 
   return (
@@ -203,6 +236,7 @@ function App() {
                 onChange={handleVolume}
               ></input>
             </div>
+            <div className="sound-name">{instrumentName(activeKey)}</div>
           </div>
         </div>
       </div>
