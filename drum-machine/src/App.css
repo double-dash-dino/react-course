@@ -73,14 +73,14 @@
 .volume-setting {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 20px 50px 20px;
 }
-
-.volume-slider {
-  padding: 10px 10px 10px 10px;
-  color: #ca0000;
-}
-
-.volume-slider:-webkit-slider-thumb {
-  color: red;
+.sound-name {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: #4b4b4b;
+  border-radius: 1px;
+  justify-content: center;
+  align-items: center;
 }

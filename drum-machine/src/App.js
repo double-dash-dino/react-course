@@ -172,7 +172,7 @@ function App() {
       case "c":
         return "Cow bell";
       default:
-        return "";
+        return "Try pressing a key";
     }
   };
 
