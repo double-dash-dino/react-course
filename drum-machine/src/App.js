@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import UIfx from "uifx";
-import bamboo_swing from "./assets/audio/bamboo_swing.wav";
 import hi_hat from "./assets/audio/hi_hat.wav";
 import snare_drum from "./assets/audio/snare.wav";
 import kick_drum from "./assets/audio/kick.wav";
@@ -12,10 +11,7 @@ import tom01 from "./assets/audio/tom01.wav";
 import tom02 from "./assets/audio/tom02.wav";
 import tom03 from "./assets/audio/tom03.wav";
 
-const bambooSound = new UIfx(bamboo_swing, {
-  volume: 1,
-  throttleMs: 50,
-});
+let vol = 0.5;
 const hiHat = new UIfx(hi_hat, {
   volume: 1,
   throttleMs: 0,
@@ -63,12 +59,13 @@ const tom3 = new UIfx(tom03, {
 
 function App() {
   const [activeKey, setActiveKey] = useState("");
-  const [volume, setVolume] = useState("50");
-  const [style, setStyle] = useState("");
+  const [volume, setVolume] = useState(0.5);
+
+  (hiHat, snareDrum).setVolume(volume);
 
   const handleVolume = (event) => {
-    console.log(event.target.value);
-    setVolume(event.target.value);
+    setVolume(parseFloat(event.target.value));
+    vol = volume;
   };
   useEffect(() => {
     const handleKeydown = (event) => {
@@ -96,7 +93,6 @@ function App() {
     document.addEventListener("keydown", handleKeydown);
     return () => {
       document.removeEventListener("keydown", handleKeydown);
-      setStyle("");
     };
   }, [activeKey]);
 
@@ -139,15 +135,14 @@ function App() {
   return (
     <div className="App">
       <div className="drum-card">
-        <div className="card-header">Welcome to the app</div>
+        <div className="card-header">Make some noise!</div>
         <div className="card-body">
           <div className="drum-pad">
-            <div>Pad header</div>
             <div className="drum-buttons">
               {/* <audio id="sound1" src="../assets/audio/bamboo_swing.wav"></audio> */}
 
               <button
-                className={"drum-button " + style}
+                className="drum-button "
                 value="q"
                 id="button1"
                 onClick={clickHandlerQ}
@@ -155,7 +150,7 @@ function App() {
                 Q
               </button>
               <button
-                className={"drum-button " + style}
+                className="drum-button "
                 value="w"
                 onClick={clickHandlerW}
               >
@@ -185,7 +180,6 @@ function App() {
             </div>
           </div>
           <div className="drum-settings">
-            Settings
             <div className="volume-setting">
               Volume
               <input
@@ -197,9 +191,6 @@ function App() {
                 className="volume-slider"
                 onChange={handleVolume}
               ></input>
-            </div>
-            <div className="kit-toggle-setting">
-              Settings 2<input type="range"></input>
             </div>
           </div>
         </div>
