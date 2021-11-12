@@ -80,6 +80,14 @@ function App() {
         clickHandlerE();
       } else if (event.key === "a") {
         clickHandlerA();
+      } else if (event.key === "s") {
+        clickHandlerS();
+      } else if (event.key === "d") {
+        clickHandlerD();
+      } else if (event.key === "z") {
+        clickHandlerZ();
+      } else if (event.key === "x") {
+        clickHandlerX();
       } else if (event.key === "c") {
         clickHandlerC();
       }
