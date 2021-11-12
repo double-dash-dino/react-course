@@ -64,6 +64,7 @@ const tom3 = new UIfx(tom03, {
 function App() {
   const [activeKey, setActiveKey] = useState("");
   const [volume, setVolume] = useState("50");
+  const [style, setStyle] = useState("");
 
   const handleVolume = (event) => {
     console.log(event.target.value);
@@ -95,6 +96,7 @@ function App() {
     document.addEventListener("keydown", handleKeydown);
     return () => {
       document.removeEventListener("keydown", handleKeydown);
+      setStyle("");
     };
   }, [activeKey]);
 
@@ -145,14 +147,18 @@ function App() {
               {/* <audio id="sound1" src="../assets/audio/bamboo_swing.wav"></audio> */}
 
               <button
-                className="drum-button"
+                className={"drum-button " + style}
                 value="q"
                 id="button1"
                 onClick={clickHandlerQ}
               >
                 Q
               </button>
-              <button className="drum-button" value="w" onClick={clickHandlerW}>
+              <button
+                className={"drum-button " + style}
+                value="w"
+                onClick={clickHandlerW}
+              >
                 W
               </button>
               <button className="drum-button" onClick={clickHandlerE}>
