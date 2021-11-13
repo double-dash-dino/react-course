@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [operations, setOperations] = useState("1+2+3");
+  const [operations, setOperations] = useState("");
   const [result, setResult] = useState("0");
 
   const clearHandler = () => {
@@ -23,7 +23,7 @@ function App() {
       <div className="calculator-card">
         <div className="calculator-screen">
           <div className="calculator-operations">{operations}</div>
-          <div className="calculator-result">{result}</div>
+          <div className="calculator-result">{eval(result)}</div>
         </div>
         <div className="calculator-pad">
           <div className="calculator-numbers">
@@ -136,7 +136,7 @@ function App() {
             <button
               className="operator-button"
               id="multiply"
-              value="x"
+              value="*"
               onClick={numberClickHandler}
             >
               x
