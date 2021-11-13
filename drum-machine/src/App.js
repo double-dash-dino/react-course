@@ -1,78 +1,15 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import UIfx from "uifx";
-import hi_hat from "./assets/audio/hi_hat.wav";
-import snare_drum from "./assets/audio/snare.wav";
-import kick_drum from "./assets/audio/kick.wav";
-import trash_cymbal from "./assets/audio/trash-hard.wav";
-import cowbell from "./assets/audio/cowbell.wav";
-import crash_soft from "./assets/audio/crash-soft.wav";
-import tom01 from "./assets/audio/tom01.wav";
-import tom02 from "./assets/audio/tom02.wav";
-import tom03 from "./assets/audio/tom03.wav";
-
-const hiHat = new UIfx(hi_hat, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const snareDrum = new UIfx(snare_drum, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const kickDrum = new UIfx(kick_drum, {
-  volume: 1,
-  throttleMs: 0,
-});
-const tom1 = new UIfx(tom01, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const tom2 = new UIfx(tom02, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const tom3 = new UIfx(tom03, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const trashCymbal = new UIfx(trash_cymbal, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const crashSoft = new UIfx(crash_soft, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const cowBell = new UIfx(cowbell, {
-  volume: 1,
-  throttleMs: 0,
-});
-
-const sounds = [
-  hiHat,
-  snareDrum,
-  kickDrum,
-  tom1,
-  tom2,
-  tom3,
-  trashCymbal,
-  crashSoft,
-  cowBell,
-];
 
 function App() {
+  const sounds = [document.getElementsByClassName("clip")];
+
   const [activeKey, setActiveKey] = useState("");
   const [volume, setVolume] = useState(0.5);
 
-  for (let i = 0; i < sounds.length; i++) {
-    sounds[i].setVolume(volume);
+  for (let i = 0; i < sounds[0].length; i++) {
+    sounds[0][i].volume = volume;
+    console.log(sounds[0][i].volume);
   }
 
   const handleVolume = (event) => {
@@ -80,24 +17,36 @@ function App() {
   };
   useEffect(() => {
     const handleKeydown = (event) => {
-      if (event.key === "q") {
-        clickHandlerQ();
-      } else if (event.key === "w") {
-        clickHandlerW();
-      } else if (event.key === "e") {
-        clickHandlerE();
-      } else if (event.key === "a") {
-        clickHandlerA();
-      } else if (event.key === "s") {
-        clickHandlerS();
-      } else if (event.key === "d") {
-        clickHandlerD();
-      } else if (event.key === "z") {
-        clickHandlerZ();
-      } else if (event.key === "x") {
-        clickHandlerX();
-      } else if (event.key === "c") {
-        clickHandlerC();
+      switch (event.key) {
+        case "q":
+          clickHandlerQ();
+          break;
+        case "w":
+          clickHandlerW();
+          break;
+        case "e":
+          clickHandlerE();
+          break;
+        case "a":
+          clickHandlerA();
+          break;
+        case "s":
+          clickHandlerS();
+          break;
+        case "d":
+          clickHandlerD();
+          break;
+        case "z":
+          clickHandlerZ();
+          break;
+        case "x":
+          clickHandlerX();
+          break;
+        case "c":
+          clickHandlerC();
+          break;
+        default:
+          break;
       }
     };
     document.addEventListener("keydown", handleKeydown);
@@ -108,47 +57,49 @@ function App() {
 
   const clickHandlerQ = () => {
     setActiveKey("q");
-    hiHat.play();
+    document.getElementById("hi-hat-audio").play();
   };
 
   const clickHandlerW = () => {
     setActiveKey("w");
-    snareDrum.play();
+    document.getElementById("snare-drum-audio").play();
   };
 
   const clickHandlerE = () => {
     setActiveKey("e");
-    kickDrum.play();
+
+    document.getElementById("kick-drum-audio").play();
   };
 
   const clickHandlerA = () => {
     setActiveKey("a");
-    tom1.play();
+
+    document.getElementById("tom-01-audio").play();
   };
 
   const clickHandlerS = () => {
     setActiveKey("s");
-    tom2.play();
+    document.getElementById("tom-02-audio").play();
   };
 
   const clickHandlerD = () => {
     setActiveKey("d");
-    tom3.play();
+    document.getElementById("tom-03-audio").play();
   };
 
   const clickHandlerZ = () => {
     setActiveKey("z");
-    trashCymbal.play();
+    document.getElementById("trash-cymbal-audio").play();
   };
 
   const clickHandlerX = () => {
     setActiveKey("x");
-    crashSoft.play();
+    document.getElementById("crash-cymbal-audio").play();
   };
 
   const clickHandlerC = () => {
     setActiveKey("c");
-    cowBell.play();
+    document.getElementById("cow-bell-audio").play();
   };
 
   const instrumentName = (key) => {
@@ -188,6 +139,11 @@ function App() {
               id="hi-hat"
               onClick={clickHandlerQ}
             >
+              <audio
+                className="clip"
+                id="hi-hat-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/hi_hat.wav"
+              ></audio>
               Q
             </button>
             <button
@@ -196,18 +152,44 @@ function App() {
               value="w"
               onClick={clickHandlerW}
             >
+              <audio
+                className="clip"
+                id="snare-drum-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/snare.wav"
+                volume="0"
+              ></audio>
               W
             </button>
             <button id="kick-drum" className="drum-pad" onClick={clickHandlerE}>
               E
+              <audio
+                className="clip"
+                id="kick-drum-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/kick.wav"
+              ></audio>
             </button>
             <button id="tom1" className="drum-pad" onClick={clickHandlerA}>
+              <audio
+                className="clip"
+                id="tom-01-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom01.wav"
+              ></audio>
               A
             </button>
             <button id="tom2" className="drum-pad" onClick={clickHandlerS}>
+              <audio
+                className="clip"
+                id="tom-02-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom02.wav"
+              ></audio>
               S
             </button>
             <button id="tom3" className="drum-pad" onClick={clickHandlerD}>
+              <audio
+                className="clip"
+                id="tom-03-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom03.wav"
+              ></audio>
               D
             </button>
             <button
@@ -215,6 +197,11 @@ function App() {
               className="drum-pad"
               onClick={clickHandlerZ}
             >
+              <audio
+                className="clip"
+                id="trash-cymbal-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/trash-hard.wav"
+              ></audio>
               Z
             </button>
             <button
@@ -222,10 +209,20 @@ function App() {
               className="drum-pad"
               onClick={clickHandlerX}
             >
+              <audio
+                className="clip"
+                id="crash-cymbal-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/crash-soft.wav"
+              ></audio>
               X
             </button>
             <button id="cow-bell" className="drum-pad" onClick={clickHandlerC}>
               C
+              <audio
+                className="clip"
+                id="cow-bell-audio"
+                src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/cowbell.wav"
+              ></audio>
             </button>
           </div>
           <div className="drum-settings">
