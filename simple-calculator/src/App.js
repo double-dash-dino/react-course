@@ -11,36 +11,36 @@ function App() {
         <div className="calculator-pad">
           <div className="calculator-numbers">
             <button className="number-button" id="9">
-              9
+              7
             </button>
             <button className="number-button" id="8">
               8
             </button>
             <button className="number-button" id="7">
-              7
+              9
             </button>
             <button className="number-button" id="6">
-              6
+              4
             </button>
             <button className="number-button" id="5">
               5
             </button>
             <button className="number-button" id="4">
-              4
+              6
             </button>
             <button className="number-button" id="3">
-              3
+              1
             </button>
             <button className="number-button" id="2">
               2
             </button>
             <button className="number-button" id="1">
-              1
+              3
             </button>
-            <button className="number-button" id="0">
+            <button className="number-button" id="zero">
               0
             </button>
-            <button className="number-button" id=".">
+            <button className="number-button" id="decimal-point">
               .
             </button>
           </div>
@@ -58,12 +58,13 @@ function App() {
               /
             </button>
           </div>
+
           <div className="calculator-controls">
+            <button className="control-button" id="clear">
+              A/C
+            </button>
             <button className="control-button" id="equals">
               =
-            </button>
-            <button className="operator-button" id="clear">
-              A/C
             </button>
           </div>
         </div>
