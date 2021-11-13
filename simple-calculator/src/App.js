@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <div className="calculator-card">
         <div className="calculator-screen">
-          <div className="calculator-operations">1+1</div>
+          <div className="calculator-operations">1+1+0</div>
           <div className="calculator-result">2</div>
         </div>
         <div className="calculator-pad">
