@@ -1,69 +1,169 @@
 import "./App.css";
+import React, { useState } from "react";
 
 function App() {
+  const [operations, setOperations] = useState("");
+  const [result, setResult] = useState("0");
+
+  const clearHandler = () => {
+    setOperations("");
+    setResult("0");
+  };
+
+  const numberClickHandler = (event) => {
+    setOperations(operations + event.target.value);
+  };
+
+  const equalsHandler = () => {
+    setResult(operations);
+  };
+
   return (
     <div className="App">
       <div className="calculator-card">
         <div className="calculator-screen">
-          <div className="calculator-operations">1+1+0</div>
-          <div className="calculator-result">2</div>
+          <div className="calculator-operations">{operations}</div>
+          <div className="calculator-result">{eval(result)}</div>
         </div>
         <div className="calculator-pad">
           <div className="calculator-numbers">
-            <button className="number-button" id="9">
+            <button
+              className="number-button"
+              id="seven"
+              value="7"
+              onClick={numberClickHandler}
+            >
               7
             </button>
-            <button className="number-button" id="8">
+            <button
+              className="number-button"
+              id="eight"
+              value="8"
+              onClick={numberClickHandler}
+            >
               8
             </button>
-            <button className="number-button" id="7">
+            <button
+              className="number-button"
+              id="nine"
+              value="9"
+              onClick={numberClickHandler}
+            >
               9
             </button>
-            <button className="number-button" id="6">
+            <button
+              className="number-button"
+              id="four"
+              value="4"
+              onClick={numberClickHandler}
+            >
               4
             </button>
-            <button className="number-button" id="5">
+            <button
+              className="number-button"
+              id="five"
+              value="5"
+              onClick={numberClickHandler}
+            >
               5
             </button>
-            <button className="number-button" id="4">
+            <button
+              className="number-button"
+              id="six"
+              value="6"
+              onClick={numberClickHandler}
+            >
               6
             </button>
-            <button className="number-button" id="3">
+            <button
+              className="number-button"
+              id="one"
+              value="1"
+              onClick={numberClickHandler}
+            >
               1
             </button>
-            <button className="number-button" id="2">
+            <button
+              className="number-button"
+              id="two"
+              value="2"
+              onClick={numberClickHandler}
+            >
               2
             </button>
-            <button className="number-button" id="1">
+            <button
+              className="number-button"
+              id="three"
+              value="3"
+              onClick={numberClickHandler}
+            >
               3
             </button>
-            <button className="number-button" id="zero">
+            <button
+              className="number-button"
+              id="zero"
+              value="0"
+              onClick={numberClickHandler}
+            >
               0
             </button>
-            <button className="number-button" id="decimal-point">
+            <button
+              className="number-button"
+              id="decimal-point"
+              value="."
+              onClick={numberClickHandler}
+            >
               .
             </button>
           </div>
           <div className="calculator-operators">
-            <button className="operator-button" id="plus">
+            <button
+              className="operator-button"
+              id="plus"
+              value="+"
+              onClick={numberClickHandler}
+            >
               +
             </button>
-            <button className="operator-button" id="minus">
+            <button
+              className="operator-button"
+              id="minus"
+              value="-"
+              onClick={numberClickHandler}
+            >
               -
             </button>
-            <button className="operator-button" id="multiply">
+            <button
+              className="operator-button"
+              id="multiply"
+              value="*"
+              onClick={numberClickHandler}
+            >
               x
             </button>
-            <button className="operator-button" id="divide">
+            <button
+              className="operator-button"
+              id="divide"
+              value="/"
+              onClick={numberClickHandler}
+            >
               /
             </button>
           </div>
 
           <div className="calculator-controls">
-            <button className="control-button" id="clear">
+            <button
+              className="control-button"
+              id="clear"
+              onClick={clearHandler}
+            >
               A/C
             </button>
-            <button className="control-button" id="equals">
+            <button
+              className="control-button"
+              id="equals"
+              onClick={equalsHandler}
+            >
               =
             </button>
           </div>
