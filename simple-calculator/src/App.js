@@ -11,17 +11,13 @@ function App() {
   };
 
   const numberClickHandler = (event) => {
-    if (event.target.value == "0"){
-
-
-
-
-
-
-      if ((operations.length != 0) && ((operations[-1] != '0') && )){
-        setOperations(operations + event.target.value);
-
-      }
+    if (
+      // Check for mutliple zeros at the start of an number
+      operations.length !== 0 &&
+      operations[operations.length - 1] === "0" &&
+      operations[operations.length - 2] === ("+" || "-" || "*" || "/")
+    ) {
+      setOperations(operations.slice(0, -1) + event.target.value);
     } else {
       setOperations(operations + event.target.value);
     }
