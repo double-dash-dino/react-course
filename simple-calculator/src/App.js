@@ -11,7 +11,23 @@ function App() {
   };
 
   const numberClickHandler = (event) => {
-    setOperations(operations + event.target.value);
+    if (
+      // Check for multiple zeros at the start of an number
+      operations.length !== 0 &&
+      operations[operations.length - 1] === "0" &&
+      operations[operations.length - 2] === ("+" || "-" || "*" || "/")
+    ) {
+      setOperations(operations.slice(0, -1) + event.target.value);
+    } else if (
+      operations.length !== 0 &&
+      operations[operations.length - 1] === "." &&
+      event.target.value === "."
+    ) {
+      setOperations(operations);
+    } else {
+      operations.replace(" ", "");
+      setOperations(operations + event.target.value);
+    }
   };
 
   const equalsHandler = () => {
@@ -21,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <div className="calculator-card">
-        <div className="calculator-screen">
+        <div className="calculator-screen" id="display">
           <div className="calculator-operations">{operations}</div>
           <div className="calculator-result">{eval(result)}</div>
         </div>
@@ -109,7 +125,7 @@ function App() {
             </button>
             <button
               className="number-button"
-              id="decimal-point"
+              id="decimal"
               value="."
               onClick={numberClickHandler}
             >
@@ -119,7 +135,7 @@ function App() {
           <div className="calculator-operators">
             <button
               className="operator-button"
-              id="plus"
+              id="add"
               value="+"
               onClick={numberClickHandler}
             >
@@ -127,7 +143,7 @@ function App() {
             </button>
             <button
               className="operator-button"
-              id="minus"
+              id="subtract"
               value="-"
               onClick={numberClickHandler}
             >
