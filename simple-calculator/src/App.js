@@ -117,16 +117,36 @@ function App() {
             </button>
           </div>
           <div className="calculator-operators">
-            <button className="operator-button" id="plus">
+            <button
+              className="operator-button"
+              id="plus"
+              value="+"
+              onClick={numberClickHandler}
+            >
               +
             </button>
-            <button className="operator-button" id="minus">
+            <button
+              className="operator-button"
+              id="minus"
+              value="-"
+              onClick={numberClickHandler}
+            >
               -
             </button>
-            <button className="operator-button" id="multiply">
+            <button
+              className="operator-button"
+              id="multiply"
+              value="x"
+              onClick={numberClickHandler}
+            >
               x
             </button>
-            <button className="operator-button" id="divide">
+            <button
+              className="operator-button"
+              id="divide"
+              value="/"
+              onClick={numberClickHandler}
+            >
               /
             </button>
           </div>
