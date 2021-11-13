@@ -12,7 +12,7 @@ function App() {
 
   const numberClickHandler = (event) => {
     if (
-      // Check for mutliple zeros at the start of an number
+      // Check for multiple zeros at the start of an number
       operations.length !== 0 &&
       operations[operations.length - 1] === "0" &&
       operations[operations.length - 2] === ("+" || "-" || "*" || "/")
@@ -25,6 +25,7 @@ function App() {
     ) {
       setOperations(operations);
     } else {
+      operations.replace(" ", "");
       setOperations(operations + event.target.value);
     }
   };
