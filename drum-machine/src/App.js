@@ -17,24 +17,36 @@ function App() {
   };
   useEffect(() => {
     const handleKeydown = (event) => {
-      if (event.key === "q") {
-        clickHandlerQ();
-      } else if (event.key === "w") {
-        clickHandlerW();
-      } else if (event.key === "e") {
-        clickHandlerE();
-      } else if (event.key === "a") {
-        clickHandlerA();
-      } else if (event.key === "s") {
-        clickHandlerS();
-      } else if (event.key === "d") {
-        clickHandlerD();
-      } else if (event.key === "z") {
-        clickHandlerZ();
-      } else if (event.key === "x") {
-        clickHandlerX();
-      } else if (event.key === "c") {
-        clickHandlerC();
+      switch (event.key) {
+        case "q":
+          clickHandlerQ();
+          break;
+        case "w":
+          clickHandlerW();
+          break;
+        case "e":
+          clickHandlerE();
+          break;
+        case "a":
+          clickHandlerA();
+          break;
+        case "s":
+          clickHandlerS();
+          break;
+        case "d":
+          clickHandlerD();
+          break;
+        case "z":
+          clickHandlerZ();
+          break;
+        case "x":
+          clickHandlerX();
+          break;
+        case "c":
+          clickHandlerC();
+          break;
+        default:
+          break;
       }
     };
     document.addEventListener("keydown", handleKeydown);
