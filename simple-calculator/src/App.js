@@ -18,6 +18,12 @@ function App() {
       operations[operations.length - 2] === ("+" || "-" || "*" || "/")
     ) {
       setOperations(operations.slice(0, -1) + event.target.value);
+    } else if (
+      operations.length !== 0 &&
+      operations[operations.length - 1] === "." &&
+      event.target.value === "."
+    ) {
+      setOperations(operations);
     } else {
       setOperations(operations + event.target.value);
     }
