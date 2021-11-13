@@ -52,6 +52,7 @@
 }
 
 .number-button {
+  font-weight: bolder;
   background-color: #240090;
   color: white;
   border: none;
@@ -60,11 +61,22 @@
   height: 7vw;
 }
 
-.number-button:hover {
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  min-width: 7vw;
+  min-height: 7vw;
+  font-size: 1em;
+}
+
+button:hover {
   background-color: rgba(255, 255, 255, 0.397);
 }
 
-.number-button:active {
+button:active {
   background-color: rgba(255, 255, 255, 0.555);
   border: 3px solid #190061;
   border-radius: 5px;
@@ -81,17 +93,26 @@
 
 .calculator-operators {
   display: grid;
-  padding: 5px 10px 10px 10px;
+  padding: 5px 5px 10px 10px;
   grid-gap: 3px;
 }
 
 .operator-button {
+  background-color: #3500d3;
+  color: white;
+  font-weight: bolder;
   width: 7vw;
 }
 
 .calculator-controls {
+  font-weight: bolder;
   display: grid;
-  padding: 5px 10px 10px 10px;
+  padding: 5px 10px 10px 0px;
   grid-gap: 3px;
   width: 7vw;
+}
+
+.control-button {
+  background-color: #3500d3;
+  font-weight: bolder;
 }
