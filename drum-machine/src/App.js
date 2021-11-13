@@ -2,8 +2,15 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 
 function App() {
+  const sounds = [document.getElementsByClassName("clip")];
+
   const [activeKey, setActiveKey] = useState("");
   const [volume, setVolume] = useState(0.5);
+
+  for (let i = 0; i < sounds[0].length; i++) {
+    sounds[0][i].volume = volume;
+    console.log(sounds[0][i].volume);
+  }
 
   const handleVolume = (event) => {
     setVolume(parseFloat(event.target.value));
@@ -43,34 +50,44 @@ function App() {
 
   const clickHandlerW = () => {
     setActiveKey("w");
+    document.getElementById("snare-drum-audio").play();
   };
 
   const clickHandlerE = () => {
     setActiveKey("e");
+
+    document.getElementById("kick-drum-audio").play();
   };
 
   const clickHandlerA = () => {
     setActiveKey("a");
+
+    document.getElementById("tom-01-audio").play();
   };
 
   const clickHandlerS = () => {
     setActiveKey("s");
+    document.getElementById("tom-02-audio").play();
   };
 
   const clickHandlerD = () => {
     setActiveKey("d");
+    document.getElementById("tom-03-audio").play();
   };
 
   const clickHandlerZ = () => {
     setActiveKey("z");
+    document.getElementById("trash-cymbal-audio").play();
   };
 
   const clickHandlerX = () => {
     setActiveKey("x");
+    document.getElementById("crash-cymbal-audio").play();
   };
 
   const clickHandlerC = () => {
     setActiveKey("c");
+    document.getElementById("cow-bell-audio").play();
   };
 
   const instrumentName = (key) => {
@@ -111,6 +128,7 @@ function App() {
               onClick={clickHandlerQ}
             >
               <audio
+                className="clip"
                 id="hi-hat-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/hi_hat.wav"
               ></audio>
@@ -123,20 +141,24 @@ function App() {
               onClick={clickHandlerW}
             >
               <audio
+                className="clip"
                 id="snare-drum-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/snare.wav"
+                volume="0"
               ></audio>
               W
             </button>
             <button id="kick-drum" className="drum-pad" onClick={clickHandlerE}>
               E
               <audio
+                className="clip"
                 id="kick-drum-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/kick.wav"
               ></audio>
             </button>
             <button id="tom1" className="drum-pad" onClick={clickHandlerA}>
               <audio
+                className="clip"
                 id="tom-01-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom01.wav"
               ></audio>
@@ -144,6 +166,7 @@ function App() {
             </button>
             <button id="tom2" className="drum-pad" onClick={clickHandlerS}>
               <audio
+                className="clip"
                 id="tom-02-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom02.wav"
               ></audio>
@@ -151,6 +174,7 @@ function App() {
             </button>
             <button id="tom3" className="drum-pad" onClick={clickHandlerD}>
               <audio
+                className="clip"
                 id="tom-03-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/tom03.wav"
               ></audio>
@@ -162,6 +186,7 @@ function App() {
               onClick={clickHandlerZ}
             >
               <audio
+                className="clip"
                 id="trash-cymbal-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/trash-hard.wav"
               ></audio>
@@ -173,6 +198,7 @@ function App() {
               onClick={clickHandlerX}
             >
               <audio
+                className="clip"
                 id="crash-cymbal-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/crash-soft.wav"
               ></audio>
@@ -181,6 +207,7 @@ function App() {
             <button id="cow-bell" className="drum-pad" onClick={clickHandlerC}>
               C
               <audio
+                className="clip"
                 id="cow-bell-audio"
                 src="https://react-course-assets.s3.eu-west-2.amazonaws.com/audio/cowbell.wav"
               ></audio>
