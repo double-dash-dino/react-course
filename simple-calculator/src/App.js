@@ -40,8 +40,11 @@ function App() {
             <button className="number-button" id="0">
               0
             </button>
+            <button className="number-button" id=".">
+              .
+            </button>
           </div>
-          <div className="calculator-operations">
+          <div className="calculator-operators">
             <button className="operator-button" id="plus">
               +
             </button>
