@@ -43,7 +43,7 @@ const RandomShakespeareInsultGenerator = (props) => {
     return Math.round(Math.random() * 9);
   };
 
-  const getSentence = () => {
+  const generateSentence = () => {
     return (
       "I miss thee greatly, thou " +
       shakespeare1[getNumber()] +
@@ -56,7 +56,7 @@ const RandomShakespeareInsultGenerator = (props) => {
   };
 
   const clickHandler = (event) => {
-    props.getSentence(getSentence);
+    props.getSentence(generateSentence);
   };
 
   return (

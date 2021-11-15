@@ -14,7 +14,7 @@ const RandomSentenceGenerator = (props) => {
   };
 
   return (
-    <div>
+    <div className="generator-box">
       <h2>What do you need?</h2>
       <br />
       <div className="generator-controls">
@@ -25,7 +25,9 @@ const RandomSentenceGenerator = (props) => {
         <RandomCongratulationsGenerator getSentence={onGetSentence} />
       </div>
 
-      <RandomSentence sentence={sentence} />
+      <div className="sentence-display">
+        <RandomSentence sentence={sentence} clearSentence={setSentence} />
+      </div>
     </div>
   );
 };

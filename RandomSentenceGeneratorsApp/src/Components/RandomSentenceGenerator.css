@@ -1,3 +1,7 @@
+.generator-box {
+  max-width: 90vw;
+}
+
 .generator-controls {
   display: flex;
   justify-content: center;
@@ -13,4 +17,8 @@
   font-weight: bold;
   font-size: large;
   color: white;
+}
+
+.sentence-display {
+  height: 70%;
 }
