@@ -1,3 +1,10 @@
 .random-sentence {
   min-height: 3em;
 }
+
+.clear-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2em;
+}
