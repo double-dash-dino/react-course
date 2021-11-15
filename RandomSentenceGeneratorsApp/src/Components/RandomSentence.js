@@ -1,13 +1,18 @@
 import "./RandomSentence.css";
 
-const clickHandler = () => {};
-
 const RandomSentence = (props) => {
+  const clickHandler = () => {
+    props.clearSentence("");
+  };
   return (
     <div className="random-sentence-box">
-      <button className="clear-button" onClick={clickHandler}>
-        X
-      </button>
+      {props.sentence.length < 0 && (
+        <button className="clear-button" onClick={clickHandler}>
+          {" "}
+          X
+        </button>
+      )}
+
       <p className="sentence">{props.sentence}</p>
     </div>
   );

@@ -5,6 +5,8 @@
 }
 
 .clear-button {
+  padding-right: 50px;
+  align-self: flex-end;
   border: none;
   background-color: transparent;
   color: white;
