@@ -2,15 +2,12 @@ import "./RandomSentence.css";
 import React, { useState } from "react";
 
 const RandomSentence = (props) => {
-  const [displayClearButton, setDisplayClearButton] = useState(false);
-
   const clickHandler = () => {
-    setDisplayClearButton(!displayClearButton);
     props.clearSentence("");
   };
   return (
     <div className="random-sentence-box">
-      {displayClearButton && (
+      {props.sentence.length > 0 && (
         <button className="clear-button" onClick={clickHandler}>
           X
         </button>
