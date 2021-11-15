@@ -1,4 +1,6 @@
-.random-sentence {
+.random-sentence-box {
+  display: flex;
+  flex-direction: column;
   min-height: 3em;
 }
 
